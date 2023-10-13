@@ -111,9 +111,6 @@ img:hover {
 .london_container {
     margin: 50px 80px 50px 80px;
     min-width: 400px;
-}
-
-.london_images {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
