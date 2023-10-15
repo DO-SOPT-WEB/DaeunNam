@@ -33,10 +33,12 @@ p {
     font-weight: bold;
     color: black;
     background-color: lavenderblush;
+    padding: 0rem 0.5rem 0rem 0.5rem;
 }
 
 .link:hover {
     color: lightcoral;
+    text-decoration: underline;
 }
 
 .section_title {
