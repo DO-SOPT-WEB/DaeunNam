@@ -1,0 +1,228 @@
+* {
+    color: black;
+    background-color:ghostwhite;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    background-color: lavenderblush;
+}
+
+.title {
+    display: block;
+    background-color: rgb(217, 207, 255);
+    padding-top: 8px;
+    padding-bottom:8px;
+    padding-left: 40px;
+    margin-bottom: 0px;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    background-color: lavenderblush;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+}
+
+.link:hover {
+    color: lightcoral;
+    text-decoration: underline;
+}
+
+.section_title {
+    display: block;
+    position: sticky;
+    top: 0px;
+    background-color: lavender;
+    padding-left: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#preview {
+    padding: 10px;
+    width: 100%;
+    max-height: 400px;
+    margin-bottom: 80px;
+}
+
+#preview ul {
+    white-space: nowrap;
+    overflow-x: auto;
+    list-style: none;
+}
+
+#preview ul::-webkit-scrollbar {
+    width: 5px;  
+    height: 10px;
+}
+
+#preview ul::-webkit-scrollbar-thumb {
+    background: #dbd0f2; /* 스크롤바의 색상 */
+    border-radius: 12px 12px 12px 12px;
+}
+
+#preview ul::-webkit-scrollbar-thumb:hover {
+	background-color:#bea3e2;
+}
+
+#preview ul::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+}
+
+#preview ul li {
+    display:inline-block;
+    padding: 3px;
+    overflow: hidden;
+}
+
+.hyperLink {
+    padding-top: 80px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-top: 1.5px solid gray;
+    border-bottom: 1.5px solid gray;
+    background-color: lavenderblush;
+}
+
+img {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    display: flex;
+    flex-grow: 1;
+    transition: all 0.5s ease-out;
+}
+
+img:hover {
+    transform: translateY(-5px);
+}
+
+.london_container {
+    margin: 50px 80px 50px 80px;
+    min-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+.paris_container {
+    display: flex;
+    gap: 0.5rem;
+    margin: 50px 150px 50px 150px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+    flex: 4; 
+    flex-grow: 4;
+    flex-basis: 100%;
+    min-width: 400px;
+}
+
+.paris_leftItem {
+    display: flex;
+    flex: 4; 
+    text-align: center;
+    width: 100%;
+    height: 540px;
+    flex-grow: 4;
+}
+
+.paris_items {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex: 4; 
+    flex-grow: 4;
+    flex-basis: 50%;
+}
+
+.paris_item {
+    width: 100%;
+    flex: 1; 
+    flex-grow: 1;
+}
+
+.italy_container {
+    display: grid;
+    text-align: center;
+    grid-template-rows: 150px 150px 150px 150px;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-gap: 5px;
+    margin: 50px 150px 50px 150px;
+}
+
+.italy_container > .italy_item {
+    width: 100%;
+    height: 100%;
+}
+
+.italy_item:first-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.italy_item:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.italy_item:nth-child(3) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.italy_item:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.italy_item:last-child {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.gotoTop {
+    position: fixed;
+    background: url("images/topButton.png") no-repeat;
+    background-size: cover;
+    bottom: 50px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+}
+
+footer {
+    font-size: 15px;
+    text-align: center;
+    padding: 15px;
+    background-color: lavenderblush;
+}
+

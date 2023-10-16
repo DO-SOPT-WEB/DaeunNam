@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>당니의 가계부</title>
+</head>
+<body>
+    <h1 class="title">당니의 가계부</h1>
+    <section class="myStatus">
+        <p class="total_txt">나의 자산</p>
+        <p class="total">341200</p>
+        <div class="totalIncomeCost">
+            <img src="./images/plus.png" class="plus" />
+            <p class="income" style="display:inline;">341200&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <img src="./images/minus.png" class="minus"/>
+            <p class="cost" style="display:inline;">50300</p>
+        </div>
+    </section>
+    <br>
+    <section>
+        <article class="dateArea">
+            <div class="selectDate">
+                <input type="button" class="left_btn">
+                <p class="date">10월 1일</p>
+                <input type="button" class="right_btn">
+            </div>
+            <p class="listText">내역 리스트</p>
+            <input 
+                type="checkbox" 
+                id="income"
+                checked="checked">
+                <label for="income">수입</label>
+            </input>
+            <input 
+                type="checkbox" 
+                id="cost"
+                checked="checked">
+                <label for="cost">지출</label>
+            </input>
+        </article>
+    </section>
+    <div class="line"></div>
+    <section class="scrollArea">
+        <article class="listView">
+            <div class="listScroll">
+                <ul>
+                    <li class="category">식비</li>
+                    <li class="content">버거킹 문정역점</li>
+                    <li class="cost_price">-10800</li>
+                    <li><input type="button" class="delete_btn"></li>
+                </ul>
+            </div>
+        </article>
+        <article class="listView">
+            <div class="listScroll">
+                <ul>
+                    <li class="category">취미</li>
+                    <li class="content">포토그레이강남2호점</li>
+                    <li class="cost_price">-5000</li>
+                    <li><input type="button" class="delete_btn"></li>
+                </ul>
+            </div>
+        </article>
+        <article class="listView">
+            <div class="listScroll">
+                <ul>
+                    <li class="category">월급</li>
+                    <li class="content">이번달 과외비</li>
+                    <li class="income_price">+300000</li>
+                    <li><input type="button" class="delete_btn"></li>
+                </ul>
+            </div>
+        </article>
+        <article class="listView">
+            <div class="listScroll">
+                <ul>
+                    <li class="category">쇼핑</li>
+                    <li class="content">오렌즈 강남역 지하쇼핑 머시기</li>
+                    <li class="cost_price">-30000</li>
+                    <li><input type="button" class="delete_btn"></li>
+                </ul>
+            </div>
+        </article>
+        <article class="listView">
+            <div class="listScroll">
+                <ul>
+                    <li class="category">식비</li>
+                    <li class="content">리또리또 숙대점</li>
+                    <li class="cost_price">-6000</li>
+                    <li><input type="button" class="delete_btn"></li>
+                </ul>
+            </div>
+        </article>
+        <article class="listView">
+            <div class="listScroll">
+                <ul>
+                    <li class="category">식비</li>
+                    <li class="content">사이공 숙대점</li>
+                    <li class="cost_price">-10000</li>
+                    <li><input type="button" class="delete_btn"></li>
+                </ul>
+            </div>
+        </article>
+        <article class="listView">
+            <div class="listScroll">
+                <ul>
+                    <li class="category">식비</li>
+                    <li class="content">사이공 숙대점</li>
+                    <li class="cost_price">-10000</li>
+                    <li><input type="button" class="delete_btn"></li>
+                </ul>
+            </div>
+        </article>
+        <article class="listView">
+            <div class="listScroll">
+                <ul>
+                    <li class="category">식비</li>
+                    <li class="content">사이공 숙대점</li>
+                    <li class="cost_price">-10000</li>
+                    <li><input type="button" class="delete_btn"></li>
+                </ul>
+            </div>
+        </article>
+        <article class="listView">
+            <div class="listScroll">
+                <ul>
+                    <li class="category">식비</li>
+                    <li class="content">사이공 숙대점</li>
+                    <li class="cost_price">-10000</li>
+                    <li><input type="button" class="delete_btn"></li>
+                </ul>
+            </div>
+        </article>
+        <article class="listView">
+            <div class="listScroll">
+                <ul>
+                    <li class="category">식비</li>
+                    <li class="content">사이공 숙대점</li>
+                    <li class="cost_price">-10000</li>
+                    <li><input type="button" class="delete_btn"></li>
+                </ul>
+            </div>
+        </article>
+    </section>
+</body>
+<footer>
+    <input type="button" class="add_btn">
+</footer>
+</html>
