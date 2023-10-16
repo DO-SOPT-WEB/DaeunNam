@@ -1,10 +1,8 @@
 * {
     color: black;
     background-color:ghostwhite;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    padding-top: 0px;
+    margin: 0rem 0rem 0rem 0rem;
+    padding-top: 0rem;
 }
 
 html {
@@ -14,7 +12,7 @@ html {
 p {
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1rem;
     color: black;
     background-color: lavenderblush;
 }
@@ -22,10 +20,8 @@ p {
 .title {
     display: block;
     background-color: rgb(217, 207, 255);
-    padding-top: 8px;
-    padding-bottom:8px;
-    padding-left: 40px;
-    margin-bottom: 0px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .link {
@@ -44,18 +40,15 @@ p {
 .section_title {
     display: block;
     position: sticky;
-    top: 0px;
+    top: 0rem;
     background-color: lavender;
-    padding-left: 40px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 0.3rem 1rem 0.3rem 1rem;
 }
 
 #preview {
-    padding: 10px;
+    padding: 0.1rem;
     width: 100%;
-    max-height: 400px;
-    margin-bottom: 80px;
+    margin-bottom: 10rem;
 }
 
 #preview ul {
@@ -65,8 +58,7 @@ p {
 }
 
 #preview ul::-webkit-scrollbar {
-    width: 5px;  
-    height: 10px;
+    height: 0.5rem;
 }
 
 #preview ul::-webkit-scrollbar-thumb {
@@ -84,22 +76,20 @@ p {
 
 #preview ul li {
     display:inline-block;
-    padding: 3px;
+    padding: 0.1rem;
     overflow: hidden;
 }
 
 .hyperLink {
-    padding-top: 80px;
-    padding-bottom: 50px;
+    padding: 7rem 7rem;
     margin-bottom: 50px;
-    border-top: 1.5px solid gray;
-    border-bottom: 1.5px solid gray;
+    border: 1.5px solid gray;
     background-color: lavenderblush;
 }
 
 img {
-    width: 220px;
-    height: 280px;
+    width: 15rem;
+    height: 17rem;
     object-fit: cover;
     display: flex;
     flex-grow: 1;
@@ -111,8 +101,8 @@ img:hover {
 }
 
 .london_container {
-    margin: 50px 80px 50px 80px;
-    min-width: 400px;
+    margin: 5rem 5rem 5rem 5rem;
+    min-width: 15rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -124,7 +114,7 @@ img:hover {
 .paris_container {
     display: flex;
     gap: 0.5rem;
-    margin: 50px 150px 50px 150px;
+    margin: 5rem 10rem 5rem 10rem;
     justify-content: space-around;
     flex-wrap: wrap;
     display: flex;
@@ -132,7 +122,7 @@ img:hover {
     flex: 4; 
     flex-grow: 4;
     flex-basis: 100%;
-    min-width: 400px;
+    min-width: 40rem;
 }
 
 .paris_leftItem {
@@ -140,7 +130,7 @@ img:hover {
     flex: 4; 
     text-align: center;
     width: 100%;
-    height: 540px;
+    height: 34.5rem;
     flex-grow: 4;
 }
 
@@ -163,10 +153,10 @@ img:hover {
 .italy_container {
     display: grid;
     text-align: center;
-    grid-template-rows: 150px 150px 150px 150px;
-    grid-template-columns: 300px 300px 300px 300px;
-    grid-gap: 5px;
-    margin: 50px 150px 50px 150px;
+    grid-template-rows: 8rem 8rem 8rem 8rem;
+    grid-template-columns: 15rem 15rem 15rem 15rem;
+    grid-gap: 0.5rem;
+    margin: 5rem 15rem 5rem 15rem;
 }
 
 .italy_container > .italy_item {
@@ -213,16 +203,16 @@ img:hover {
     position: fixed;
     background: url("images/topButton.png") no-repeat;
     background-size: cover;
-    bottom: 50px;
-    right: 50px;
-    width: 40px;
-    height: 40px;
+    bottom: 3rem;
+    right: 3rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 footer {
-    font-size: 15px;
+    font-size: 1rem;
     text-align: center;
-    padding: 15px;
+    padding: 1.5rem;
     background-color: lavenderblush;
 }
 
