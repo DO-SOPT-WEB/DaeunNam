@@ -64,7 +64,7 @@ p {
 
 #preview ul::-webkit-scrollbar-thumb {
     background: #dbd0f2; /* 스크롤바의 색상 */
-    border-radius: 12px 12px 12px 12px;
+    border-radius: 12px;
 }
 
 #preview ul::-webkit-scrollbar-thumb:hover {
