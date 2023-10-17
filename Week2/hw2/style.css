@@ -1,28 +1,27 @@
 body {
-    height: calc(100vh - 50px);
+    height: 375px;
 }
 
 .title {
     text-align: center;
-    border-bottom: 2px solid gray;
-    padding-bottom: 5px;
+    border-bottom: 0.2rem solid gray;
     background-color: lavender;
-    padding-top: 10px;
-    margin-top: 0px;
+    padding: 0.5rem 0.5rem;
+    margin-top: 0rem;
     overflow: hidden;
 }
 
 body {
-    margin: 0px;
+    margin: 0rem;
 }
 
 .myStatus {
     display: block;
     text-align: center;
-    border-radius: 10px;
-    border: 5px solid black;
-    margin-left: 30px;
-    margin-right: 30px;
+    border-radius: 0.7rem;
+    border: 0.3rem solid black;
+    margin-left: 2rem;
+    margin-right: 2rem;
     overflow: hidden;
     background-color: lavender;
 }
@@ -32,30 +31,30 @@ body {
 }
 
 .total_txt {
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: bold;
-    padding-bottom: 0px;
-    margin-bottom: 5px;
+    padding-bottom: 0rem;
+    margin-bottom: 0.5rem;
 }
 
 .total {
-    font-size: 35px;
+    font-size: 2rem;
     font-weight: bold;
-    padding-top: 0px;
-    margin-top: 0px;
-    margin-bottom: 10px;
+    padding-top: 0rem;
+    margin-top: 0rem;
+    margin-bottom: 0.1rem;
 }
 
 .totalIncomeCost {
-    padding-bottom: 20px;
+    padding-bottom: 1rem;
 }
 
 .plus, .minus {
     position: relative;
-    bottom: -3px;
-    margin-right: 5px;
-    width: 20px;
-    height: 20px;
+    bottom: -0.2rem;
+    margin-right: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 .income {
@@ -67,28 +66,27 @@ body {
 }
 
 .selectDate {
-    border-top: 2px solid gray;
-    padding-top: 10px;
+    border-top: 0.2rem solid gray;
+    padding-top: 0.5rem;
 }
 
 input.left_btn {
     background: url("images/toLeft.png") no-repeat;
-    margin-right: 10px;
+    margin-right: 0.1rem;
 }
 
 input.right_btn {
     background: url("images/toRight.png") no-repeat;
-    margin-left: 10px;
+    margin-left: 0.1rem;
 }
 
 
 input.left_btn, input.right_btn, date {
-    width: 19px;
-    height: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    width: 1rem;
+    height: 1.5rem;
+    padding: 0.3rem 0.6rem 0rem 0.6rem;
     border: none;
-    margin-top: 5px;
+    margin-top: 0.6rem;
     background-size: cover;
 }
 
@@ -98,22 +96,22 @@ input.left_btn, input.right_btn, date {
 
 .date {
     display: inline;
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 
 .listText {
     display: inline;
     font-weight: bold;
     float: left;
-    margin-left: 20px;
+    margin-left: 0.2rem;
 }
 
 #income, #cost, label {
     float: right;
-    margin-top: 10px;
-    margin-right: 10px;
-    padding: 3px 18px 3px 18px;
-    border-radius: 5px;
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+    border-radius: 0.5rem;
     border: 1px solid gray;
 }
 
@@ -145,9 +143,9 @@ input[id="cost"]:checked + label {
 .listView {
     display: block;
     background-color: lavender;
-    border-radius: 10px;
-    height: 50px;
-    margin: 0px 15px 20px 15px;
+    border-radius: 0.5rem;
+    height: 3.3rem;
+    margin: 0rem 1rem 1rem 1rem;
 }
 
 ul, li {
@@ -161,8 +159,8 @@ ul, li {
 }
 
 .category  {
-    bottom: -18px;
-    right: 20px;
+    bottom: -1.2rem;
+    right: 1rem;
 }
 
 .content {
@@ -170,15 +168,15 @@ ul, li {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    top: 17px;
-    left: 20px;
+    top: 1.2rem;
+    left: 1rem;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 1rem;
 }
 
 .cost_price, .income_price {    
-    right: 10px;
-    bottom: -19px;
+    right: 0.1rem;
+    bottom: -1.3rem;
     margin-left: auto;
 }
 
@@ -193,28 +191,28 @@ ul, li {
 input.delete_btn {
     background: url("images/delete.png") no-repeat;
     background-size: cover;
-    width: 1ch;
-    height: 1.6ch;
+    width: 0.8rem;
+    height: 0.8rem;
     border: none;
-    bottom: -5px;
-    right: 10px;
+    bottom: -0.3rem;
+    right: 0.3rem;
 }
 
 footer {
     position: fixed;
-    left: 0px;
-    bottom: 0px;
-    height: 50px;
+    left: 0rem;
+    bottom: 0rem;
+    height: 3rem;
     width: 100%;
     background-color: lightgrey;
-    margin: 0px;
+    margin: 0rem;
 }
 
 .add_btn {
     display: block;
     background: url("images/add.png") no-repeat;
-    width: 50px;
-    height: 50px;
+    width: 3.3rem;
+    height: 3rem;
     border: none;
     background-size: cover;
     margin: 0 auto;
