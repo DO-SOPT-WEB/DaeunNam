@@ -242,7 +242,7 @@ img:hover {
     grid-row-end: 5;
 }
 
-.gotoTop {
+#scrollTop {
     position: fixed;
     background: url("images/topButton.png") no-repeat;
     background-size: cover;
