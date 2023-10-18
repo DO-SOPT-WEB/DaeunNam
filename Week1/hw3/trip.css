@@ -1,3 +1,7 @@
+:root {
+    --main-background-color: lavenderblush;
+}
+
 * {
     color: black;
     background-color:ghostwhite;
@@ -14,7 +18,7 @@ p {
     font-weight: bold;
     font-size: 1rem;
     color: black;
-    background-color: lavenderblush;
+    background-color: var(--main-background-color);
 }
 
 .title {
@@ -28,7 +32,7 @@ p {
     text-decoration: none;
     font-weight: bold;
     color: black;
-    background-color: lavenderblush;
+    background-color: var(--main-background-color);
     padding: 0rem 0.5rem 0rem 0.5rem;
 }
 
@@ -88,7 +92,7 @@ ul {
     padding: 7rem 7rem;
     margin-bottom: 50px;
     border: 1.5px solid gray;
-    background-color: lavenderblush;
+    background-color: var(--main-background-color);
 }
 
 img {
