@@ -32,7 +32,7 @@ function updateHistory () {
 
     const deleteBtn = listView.querySelector(".delete_btn");
     deleteBtn.addEventListener("click", function() {
-      deleteHistories(listView, history);
+      deleteHistory(listView, history);
     });
 
     listScroll.appendChild(listView);
@@ -66,7 +66,7 @@ function filterHistories (showIncome, showCost) {
   return filteredHistories;
 }
 
-function deleteHistories (listView, history) {
+function deleteHistory (listView, history) {
   const listScroll = document.querySelector(".scrollArea");
   const historyIndex = HISTORY_LIST.indexOf(history);
   listScroll.removeChild(listView);
