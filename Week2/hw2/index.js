@@ -13,7 +13,7 @@ document.getElementById("income").addEventListener("change", updateHistory);
 document.getElementById("cost").addEventListener("change", updateHistory);
 updateHistory();
 
-function updateHistory() {
+function updateHistory () {
   const showIncome = document.getElementById("income").checked;
   const showCost = document.getElementById("cost").checked;
   const filteredHistories = filterHistories(showIncome, showCost);
@@ -40,10 +40,10 @@ function updateHistory() {
   updateBalance();
 }
 
-function createListView(history, priceClass) {
+function createListView (history, priceClass) {
   const listView = document.createElement("article");
   listView.className = "listView";
-  
+
   const ulElement = document.createElement("ul");
   ulElement.innerHTML = `
     <li class="category">${history.category}</li>
@@ -55,7 +55,7 @@ function createListView(history, priceClass) {
   return listView;
 }
 
-function filterHistories(showIncome, showCost) {
+function filterHistories (showIncome, showCost) {
   const filteredHistories = [];
 
   for (const history of HISTORY_LIST) {
@@ -66,7 +66,7 @@ function filterHistories(showIncome, showCost) {
   return filteredHistories;
 }
 
-function deleteHistories(listView, history) {
+function deleteHistories (listView, history) {
   const listScroll = document.querySelector(".scrollArea");
   const historyIndex = HISTORY_LIST.indexOf(history);
   listScroll.removeChild(listView);
@@ -78,11 +78,7 @@ function deleteHistories(listView, history) {
   updateHistory();
 }
 
-function updateBalance() {
-  const totalElement = document.querySelector(".total");
-  const incomeElement = document.querySelector(".income");
-  const costElement = document.querySelector(".cost");
-
+function updateBalance () {
   totalIncome = 0;
   totalCost = 0;
 
@@ -93,10 +89,16 @@ function updateBalance() {
       totalCost -= history.amount;
     }
   }
+  calculateBalance();
+}
+
+function calculateBalance () {
+  const totalElement = document.querySelector(".total");
+  const incomeElement = document.querySelector(".income");
+  const costElement = document.querySelector(".cost");
 
   balance = INIT_BALANCE + totalIncome - totalCost;
   totalElement.textContent = balance;
   incomeElement.textContent = totalIncome;
   costElement.textContent = totalCost;
 }
-
