@@ -140,7 +140,6 @@ input[id="cost"]:checked + label {
 }
 
 .listView {
-    display: block;
     margin: 0rem 1rem 1rem 1rem;
     border-radius: 0.5rem;
     background-color: lavender;
