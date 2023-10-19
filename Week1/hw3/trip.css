@@ -1,10 +1,13 @@
+:root {
+    --main-background-color: lavenderblush;
+}
+
 * {
-    color: black;
+    margin: 0rem 0rem 0rem 0rem;
     background-color:ghostwhite;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    padding-top: 0px;
+    padding-top: 0rem;
+    color: black;
+    
 }
 
 html {
@@ -12,98 +15,94 @@ html {
 }
 
 p {
+    background-color: var(--main-background-color);
     text-align: center;
-    font-weight: bold;
-    font-size: 20px;
     color: black;
-    background-color: lavenderblush;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .title {
     display: block;
+    margin-bottom: 0.5rem;
     background-color: rgb(217, 207, 255);
-    padding-top: 8px;
-    padding-bottom:8px;
-    padding-left: 40px;
-    margin-bottom: 0px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
 .link {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    background-color: lavenderblush;
+    background-color: var(--main-background-color);
     padding: 0rem 0.5rem 0rem 0.5rem;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
 .link:hover {
-    color: lightcoral;
     text-decoration: underline;
+    color: lightcoral;
 }
 
 .section_title {
     display: block;
     position: sticky;
-    top: 0px;
+    top: 0rem;
+    z-index: 1;
     background-color: lavender;
-    padding-left: 40px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 0.3rem 1rem 0.3rem 1rem;
 }
 
-#preview {
-    padding: 10px;
+.preview {
+    margin-bottom: 10rem;
+    padding: 0.1rem;
     width: 100%;
-    max-height: 400px;
-    margin-bottom: 80px;
 }
 
-#preview ul {
-    white-space: nowrap;
-    overflow-x: auto;
+ul {
     list-style: none;
 }
 
-#preview ul::-webkit-scrollbar {
-    width: 5px;  
-    height: 10px;
+.preview ul {
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
-#preview ul::-webkit-scrollbar-thumb {
+.preview ul::-webkit-scrollbar {
+    height: 0.5rem;
+}
+
+.preview ul::-webkit-scrollbar-thumb {
+    border-radius: 12px;
     background: #dbd0f2; /* 스크롤바의 색상 */
-    border-radius: 12px 12px 12px 12px;
 }
 
-#preview ul::-webkit-scrollbar-thumb:hover {
+.preview ul::-webkit-scrollbar-thumb:hover {
 	background-color:#bea3e2;
 }
 
-#preview ul::-webkit-scrollbar-track {
+.preview ul::-webkit-scrollbar-track {
     background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
 }
 
-#preview ul li {
-    display:inline-block;
-    padding: 3px;
+.preview ul li {
+    display: inline-block;
+    padding: 0.1rem;
     overflow: hidden;
 }
 
 .hyperLink {
-    padding-top: 80px;
-    padding-bottom: 50px;
     margin-bottom: 50px;
-    border-top: 1.5px solid gray;
-    border-bottom: 1.5px solid gray;
-    background-color: lavenderblush;
+    border: 1.5px solid gray;
+    background-color: var(--main-background-color);
+    padding: 7rem 7rem;
 }
 
 img {
-    width: 220px;
-    height: 280px;
-    object-fit: cover;
     display: flex;
     flex-grow: 1;
     transition: all 0.5s ease-out;
+    width: 15rem;
+    height: 17rem;
+    object-fit: cover;
 }
 
 img:hover {
@@ -111,62 +110,61 @@ img:hover {
 }
 
 .london_container {
-    margin: 50px 80px 50px 80px;
-    min-width: 400px;
     display: flex;
+    flex-basis: 100%;
+    flex-grow: 1;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-around;
-    flex-grow: 1;
-    flex-basis: 100%;
+    margin: 5rem 5rem 5rem 5rem;
+    min-width: 15rem;
 }
 
 .paris_container {
     display: flex;
-    gap: 0.5rem;
-    margin: 50px 150px 50px 150px;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    display: flex;
-    text-align: center;
     flex: 4; 
-    flex-grow: 4;
     flex-basis: 100%;
-    min-width: 400px;
+    flex-grow: 4;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: space-around;
+    margin: 5rem 10rem 5rem 10rem;
+    min-width: 40rem;
+    text-align: center;
 }
 
 .paris_leftItem {
     display: flex;
     flex: 4; 
-    text-align: center;
-    width: 100%;
-    height: 540px;
     flex-grow: 4;
+    width: 100%;
+    height: 34.5rem;
+    text-align: center;
 }
 
 .paris_items {
     display: flex;
-    text-align: center;
+    flex: 4;
+    flex-basis: 50%;
+    flex-grow: 4;
     flex-wrap: wrap;
     gap: 0.5rem;
-    flex: 4; 
-    flex-grow: 4;
-    flex-basis: 50%;
+    text-align: center;
 }
 
 .paris_item {
-    width: 100%;
-    flex: 1; 
+    flex: 1;
     flex-grow: 1;
+    width: 100%;
 }
 
 .italy_container {
     display: grid;
+    grid-template-rows: 8rem 8rem 8rem 8rem;
+    grid-template-columns: 15rem 15rem 15rem 15rem;
+    grid-gap: 0.5rem;
+    margin: 5rem 15rem 5rem 15rem;
     text-align: center;
-    grid-template-rows: 150px 150px 150px 150px;
-    grid-template-columns: 300px 300px 300px 300px;
-    grid-gap: 5px;
-    margin: 50px 150px 50px 150px;
 }
 
 .italy_container > .italy_item {
@@ -175,54 +173,54 @@ img:hover {
 }
 
 .italy_item:first-child {
-    grid-column-start: 1;
-    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .italy_item:nth-child(2) {
-    grid-column-start: 1;
-    grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .italy_item:nth-child(3) {
-    grid-column-start: 3;
-    grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 5;
 }
 
 .italy_item:nth-child(4) {
-    grid-column-start: 1;
-    grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .italy_item:last-child {
-    grid-column-start: 4;
-    grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 5;
 }
 
 .gotoTop {
     position: fixed;
+    right: 3rem;
+    bottom: 3rem;
     background: url("images/topButton.png") no-repeat;
     background-size: cover;
-    bottom: 50px;
-    right: 50px;
-    width: 40px;
-    height: 40px;
+    width: 3rem;
+    height: 3rem;
 }
 
 footer {
-    font-size: 15px;
+    background-color: var(--main-background-color);
+    padding: 1.5rem;
     text-align: center;
-    padding: 15px;
-    background-color: lavenderblush;
+    font-size: 1rem;
 }
 
