@@ -27,18 +27,10 @@
                 <input type="button" class="right_btn">
             </div>
             <p class="listText">내역 리스트</p>
-            <input 
-                type="checkbox" 
-                id="income"
-                checked>
-                <label for="income">수입</label>
-            </input>
-            <input 
-                type="checkbox" 
-                id="cost"
-                checked>
-                <label for="cost">지출</label>
-            </input>
+            <input type="checkbox" id="income" checked>
+            <label for="income" class="checkbox-label">수입</label>
+            <input type="checkbox" id="cost" checked>
+            <label for="cost" class="checkbox-label">지출</label>
         </article>
     </section>
     <div class="line"></div>
@@ -46,9 +38,33 @@
         <div id="incomeList"></div>
         <div id="costList"></div>
     </section>
-    <script src="index.js"></script>
+    <div class="modal hidden">
+        <div class="modal_content">
+            <p class="modal-title">내역 추가</p>
+            <div class="radioButtons">
+                <input type="radio" id="radio-income" name="finance" checked />
+                <label for="radio-income" class="radio-label">수입</label>
+                <input type="radio" id="radio-cost" name="finance"/>
+                <label for="radio-cost" class="radio-label">지출</label>
+            </div>
+            
+            <div class="type-of-finance">종류</div>
+            <select class="category-list">
+            </select>
+
+            <div class="amount-of-finance">금액</div>
+            <input type="text" class="textbox" name="content"/><br>
+
+            <div class="content-of-finance">내용</div>
+            <input type="text" class="textbox"name="content"/><br>
+
+            <button type="button" class="save_btn">저장하기</button>
+            <button type="button" class="cancel_btn">닫기</button>
+        </div>
+    </div>
+    <script src="index.js" defer></script>
 </body>
 <footer>
-    <button class="add_btn"></button>
+    <button type="button" class="add_btn"></button>
 </footer>
 </html>

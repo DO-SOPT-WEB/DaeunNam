@@ -101,7 +101,7 @@ input.left_btn, input.right_btn, .date {
     font-weight: bold;
 }
 
-#income, #cost, label {
+#income, #cost, .checkbox-label {
     float: right;
     margin-top: 0.3rem;
     margin-right: 0.3rem;
@@ -114,12 +114,12 @@ input.left_btn, input.right_btn, .date {
     display: none;
 }
 
-input[id="income"]:checked + label {
+input[id="income"]:checked + .checkbox-label {
     border: 1px solid transparent;
     background-color: rgb(205, 207, 255);
 }
 
-input[id="cost"]:checked + label {
+input[id="cost"]:checked + .checkbox-label {
     border: none;
     border: 1px solid transparent;
     background-color: rgb(205, 207, 255);
@@ -211,4 +211,90 @@ footer {
     background-size: cover;
     width: 3.3rem;
     height: 3rem;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 15rem;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+}
+
+.modal_content {
+    display: block;
+    position: relative;
+    bottom: -3rem;
+    border: 2px solid gray;
+    border-radius: 50px;
+    background-color: ghostwhite;
+    padding: 1rem 2rem;
+    width: 100%;
+    height: 50%;
+    min-height: 50rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.modal_content > .modal-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal_content > select, button, .textbox {
+    width: 100%;
+    height: 2rem;
+}
+
+.modal_content > div, button {
+    margin-top: 1rem;
+}
+
+.modal_content > input.textbox {
+    width: 97.5%;
+}
+
+.radioButtons {
+    text-align: center;
+}
+
+#radio-income, #radio-cost, .radio-label {
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+}
+
+#radio-income, #radio-cost {
+    display: none;
+}
+
+input[id="radio-income"]:checked + .radio-label {
+    border: 1px solid transparent;
+    background-color: rgb(155, 158, 248);
+}
+
+input[id="radio-cost"]:checked + .radio-label {
+    border: none;
+    border: 1px solid transparent;
+    background-color: rgb(155, 158, 248);
+}
+
+.save_btn, .cancel_btn {
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.save_btn {
+    background-color: lavender;
+}
+
+.hidden {
+    display: none;
 }
