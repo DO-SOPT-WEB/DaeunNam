@@ -6,6 +6,13 @@ const HISTORY_LIST = [
   { category: "월급", content: "이번달 월급", amount: 300000 },
   { category: "식비", content: "강남역 깍뚝에서 삼쏘", amount: -30000 }
 ];
+const CATEGORY_LIST = [
+  { name: "식비", financeType: "cost" },
+  { name: "취미", financeType: "cost" },
+  { name: "영화", financeType: "cost" },
+  { name: "월급", financeType: "income" },
+  { name: "용돈", financeType: "income" }
+];
 let totalIncome = 0;
 let totalCost = 0;
 let priceClass = "income_price";
@@ -124,14 +131,14 @@ function filterCategoryList() {
   categoryList.innerHTML = "";
 
   const filterCategories = new Set(
-    HISTORY_LIST
-      .filter(history => {
+    CATEGORY_LIST
+      .filter(category => {
         if (financeType === 'cost') 
-          return history.amount < 0;
+          return category.financeType === 'cost';
         else
-          return history.amount > 0;
+          return category.financeType === 'income';
       })
-      .map(history => history.category)
+      .map(category => category.name)
   );
 
   filterCategories.forEach(category => {
