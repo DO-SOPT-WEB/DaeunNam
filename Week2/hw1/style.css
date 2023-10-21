@@ -110,7 +110,7 @@ img:hover {
     filter: brightness(50%);
 }
 
-.londonImage {
+.london_image {
     display: flex;
     position: relative;
     flex-grow: 1;
@@ -119,7 +119,7 @@ img:hover {
     z-index: 0;
 }
 
-.caption-title {
+.caption_title {
     display: flex;
     display: block;
     position: absolute;
@@ -133,7 +133,7 @@ img:hover {
     color: white;
 }
 
-.caption-content{
+.caption_content{
     display: flex;
     display: block;
     position: absolute;
@@ -144,9 +144,10 @@ img:hover {
     z-index: -1;
     background-color: transparent;
     color: white;
+    font-weight: lighter;
 }
 
-.londonImage:hover .caption-content, .londonImage:hover .caption-title {
+.london_image:hover .caption_content, .london_image:hover .caption_title {
     z-index: 2;
 }
 
@@ -248,7 +249,7 @@ img:hover {
     grid-column-end: 5;
 }
 
-.scrollTop {
+.scroll_top {
     position: fixed;
     right: 3rem;
     bottom: 3rem;

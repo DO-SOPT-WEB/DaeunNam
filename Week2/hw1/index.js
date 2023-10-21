@@ -1,4 +1,4 @@
-let scrollTopBtn = document.querySelector(".scrollTop");
+let scrollTopBtn = document.querySelector(".scroll_top");
 
 document.addEventListener('scroll', () => {
     const topStartY = scrollTopBtn.getBoundingClientRect().height;
