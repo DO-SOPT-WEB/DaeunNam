@@ -248,7 +248,7 @@ img:hover {
     grid-column-end: 5;
 }
 
-#scrollTop {
+.scrollTop {
     position: fixed;
     right: 3rem;
     bottom: 3rem;
