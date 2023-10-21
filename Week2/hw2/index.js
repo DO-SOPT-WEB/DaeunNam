@@ -7,16 +7,41 @@ const HISTORY_LIST = [
   { category: "식비", content: "강남역 깍뚝에서 삼쏘", amount: -30000 }
 ];
 let totalIncome = 0;
-let totalCost = 0; 
+let totalCost = 0;
+let financeType = "income";
 
 document.getElementById("income").addEventListener("change", updateHistory);
 document.getElementById("cost").addEventListener("change", updateHistory);
+document.querySelector('.save_btn').addEventListener('click', addHistoryToList);
+document.querySelectorAll('input[name="finance"]').forEach(function(radio) {
+  radio.addEventListener("change", function() {
+    if (document.getElementById("radio-income").checked) {
+      financeType = "income";
+    } else if (document.getElementById("radio-cost").checked) {
+      financeType = "cost";
+    }
+    filterCategoryList();
+  });
+});
+
 updateHistory();
 
 function updateHistory () {
   const showIncome = document.getElementById("income").checked;
   const showCost = document.getElementById("cost").checked;
   const filteredHistories = filterHistories(showIncome, showCost);
+  const addButton = document.querySelector(".add_btn");
+  const modal = document.querySelector(".modal")
+  const closeButton = document.querySelector(".cancel_btn");
+
+  const openModal = () => {
+    modal.classList.remove("hidden");
+  }
+  addButton.addEventListener("click", openModal);
+  const closeModal = () => {
+    modal.classList.add("hidden");
+  }
+  closeButton.addEventListener("click", closeModal);
 
   let listScroll = document.querySelector(".scrollArea");
   listScroll.innerHTML = "";
@@ -34,10 +59,10 @@ function updateHistory () {
     deleteBtn.addEventListener("click", function() {
       deleteHistory(listView, history);
     });
-
     listScroll.appendChild(listView);
   }
   updateBalance();
+  filterCategoryList();
 }
 
 function createListView (history, priceClass) {
@@ -101,4 +126,55 @@ function calculateBalance () {
   totalElement.textContent = balance;
   incomeElement.textContent = totalIncome;
   costElement.textContent = totalCost;
+}
+
+function filterCategoryList() {
+  const categoryList = document.querySelector(".category-list");
+  categoryList.innerHTML = "";
+
+  const filterCategories = new Set(
+    HISTORY_LIST
+      .filter(history => {
+        if (financeType === 'cost') 
+          return history.amount < 0;
+        else
+          return history.amount > 0;
+      })
+      .map(history => history.category)
+  );
+
+  filterCategories.forEach(category => {
+    const option = document.createElement("option");
+    option.text = category;
+    categoryList.add(option);
+  });
+}
+
+
+function addHistoryToList() {
+  const financeType = document.querySelector('input[name="finance"]:checked').id;
+  const category = document.querySelector('.category-list').value;
+  const amount = parseFloat(document.querySelector('.textbox[name="amount"]').value);
+  const content = document.querySelector('.textbox[name="content"]').value;
+  const newHistory = {
+    category: category,
+    content: content,
+    amount: financeType === 'radio-income' ? amount : -amount
+  };
+  amountShouldbeNumber(amount, newHistory);
+}
+
+function amountShouldbeNumber (amount, newHistory) {
+  if (isNaN(amount)) {
+    alert("금액을 숫자로 입력해주세요.");
+    return;
+  } else {
+    HISTORY_LIST.push(newHistory);
+    updateHistory();
+    alert("저장되었습니다.");
+  }
+}
+
+function displayModal() {
+  modal.classList.toggle("hidden");
 }
