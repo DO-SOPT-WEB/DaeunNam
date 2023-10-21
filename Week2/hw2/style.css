@@ -55,10 +55,13 @@ body {
 }
 
 .income {
+    display: inline;
+    padding-right: 1rem;
     color: blue;
 }
 
 .cost {
+    display: inline;
     color: red;
 }
 
