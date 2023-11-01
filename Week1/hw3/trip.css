@@ -83,6 +83,16 @@ ul {
     background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
 }
 
+.move_section {
+    background-color: var(--main-background-color);
+    padding: 0;
+    text-align: center;
+}
+
+.move_section > li {
+    display: inline-block;
+}
+
 .preview ul li {
     display: inline-block;
     padding: 0.1rem;
