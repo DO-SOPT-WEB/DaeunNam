@@ -13,7 +13,6 @@ body {
 }
 
 .myStatus {
-
     display: block;
     margin-right: 2rem;
     margin-left: 2rem;
@@ -56,10 +55,13 @@ body {
 }
 
 .income {
+    display: inline;
+    padding-right: 1rem;
     color: blue;
 }
 
 .cost {
+    display: inline;
     color: red;
 }
 
