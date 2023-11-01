@@ -1,0 +1,219 @@
+body {
+    margin: 0rem;
+    height: 375px;
+}
+
+.title {
+    margin-top: 0rem;
+    border-bottom: 0.2rem solid gray;
+    background-color: lavender;
+    padding: 0.5rem 0.5rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.myStatus {
+    display: block;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    border: 0.3rem solid black;
+    border-radius: 0.7rem;
+    background-color: lavender;
+    overflow: hidden;
+    text-align: center;
+}
+
+.dateArea {
+    overflow: hidden;
+}
+
+.total_txt {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.total {
+    margin-top: 0rem;
+    margin-bottom: 0.1rem;
+    padding-top: 0rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.totalIncomeCost {
+    padding-bottom: 1rem;
+}
+
+.plus, .minus {
+    position: relative;
+    bottom: -0.2rem;
+    margin-right: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.income {
+    display: inline;
+    padding-right: 1rem;
+    color: blue;
+}
+
+.cost {
+    display: inline;
+    color: red;
+}
+
+.selectDate {
+    border-top: 0.2rem solid gray;
+    padding-top: 0.5rem;
+}
+
+input.left_btn {
+    margin-right: 0.1rem;
+    background: url("images/toLeft.png") no-repeat;
+}
+
+input.right_btn {
+    margin-left: 0.1rem;
+    background: url("images/toRight.png") no-repeat;
+}
+
+
+input.left_btn, input.right_btn, .date {
+    margin-top: 0.6rem;
+    border: none;
+    background-size: cover;
+    padding: 0.3rem 0.6rem 0rem 0.6rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.selectDate {
+    text-align: center;
+}
+
+.date {
+    display: inline;
+    font-size: 1.2rem;
+}
+
+.listText {
+    display: inline;
+    float: left;
+    margin-left: 0.2rem;
+    font-weight: bold;
+}
+
+#income, #cost, label {
+    float: right;
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    padding: 0.3rem 1.5rem;
+}
+
+#income, #cost {
+    display: none;
+}
+
+input[id="income"]:checked + label {
+    border: 1px solid transparent;
+    background-color: rgb(205, 207, 255);
+}
+
+input[id="cost"]:checked + label {
+    border: none;
+    border: 1px solid transparent;
+    background-color: rgb(205, 207, 255);
+}
+
+.line {
+    border-bottom: 1px solid rgba(153, 153, 153, 0.721);
+}
+
+.scrollArea {
+    height: calc(100vh - 390px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.listView {
+    margin: 0rem 1rem 1rem 1rem;
+    border-radius: 0.5rem;
+    background-color: lavender;
+    height: 3.3rem;
+}
+
+ul, li {
+    display: flex;
+    list-style-type: none;
+}
+
+.category, .content, .cost_price, .income_price, input.delete_btn {
+    display: inline-block;
+    position: relative;
+}
+
+.category  {
+    right: 1rem;
+    bottom: -1.2rem;
+}
+
+.content {
+    top: 1.2rem;
+    left: 1rem;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cost_price, .income_price {    
+    right: 0.1rem;
+    bottom: -1.3rem;
+    margin-left: auto;
+}
+
+.cost_price {
+    color: red;
+}
+
+.income_price {
+    color: blue;
+}
+
+input.delete_btn {
+    right: 0.3rem;
+    bottom: -0.3rem;
+    border: none;
+    background: url("images/delete.png") no-repeat;
+    background-size: cover;
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0rem;
+    left: 0rem;
+    margin: 0rem;
+    background-color: lightgrey;
+    width: 100%;
+    height: 3rem;
+}
+
+.add_btn {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background: url("images/add.png") no-repeat;
+    background-size: cover;
+    width: 3.3rem;
+    height: 3rem;
+}
