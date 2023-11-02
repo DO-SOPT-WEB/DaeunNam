@@ -110,7 +110,7 @@ input.left_btn, input.right_btn, .date {
     margin-right: 0.3rem;
     border: 1px solid gray;
     border-radius: 0.5rem;
-    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+    padding: 0.3rem 1.5rem;
 }
 
 #income, #cost {
