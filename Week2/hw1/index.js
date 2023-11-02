@@ -16,6 +16,18 @@ images.forEach(imageContainer => {
         image.style.transform = 'translateY(5px)';
         caption.style.opacity = 1;
     });
+
+    caption.addEventListener('mouseover', (event) => {
+        image.style.filter = 'brightness(50%)';
+        image.style.transform = 'translateY(-5px)';
+        caption.style.opacity = 1;
+    });
+
+    caption.addEventListener('mouseout', (event) => {
+        image.style.filter = 'brightness(100%)';
+        image.style.transform = 'translateY(5px)';
+        caption.style.opacity = 1;
+    });
 });
 
 document.addEventListener('scroll', () => {
