@@ -1,34 +1,33 @@
 let scrollTopBtn = document.querySelector(".scroll_top");
 const images = document.querySelectorAll('.london_image');
 
+function applyHoverEffects(image, caption, brightness, translateY) {
+    image.style.filter = `brightness(${brightness}%)`;
+    image.style.transform = `translateY(${translateY}px)`;
+    caption.style.opacity = 1;
+}
+
 images.forEach(imageContainer => {
     const image = imageContainer.querySelector('img');
     const caption = imageContainer.querySelector('.caption');
 
-    image.addEventListener('mouseover', (event) => {
-        image.style.filter = 'brightness(50%)';
-        image.style.transform = 'translateY(-5px)';
-        caption.style.opacity = 1;
+    image.addEventListener('mouseover', () => {
+        applyHoverEffects(image, caption, 50, -5);
     });
 
-    image.addEventListener('mouseout', (event) => {
-        image.style.filter = 'brightness(100%)';
-        image.style.transform = 'translateY(5px)';
-        caption.style.opacity = 1;
+    image.addEventListener('mouseout', () => {
+        applyHoverEffects(image, caption, 100, 5);
     });
 
-    caption.addEventListener('mouseover', (event) => {
-        image.style.filter = 'brightness(50%)';
-        image.style.transform = 'translateY(-5px)';
-        caption.style.opacity = 1;
+    caption.addEventListener('mouseover', () => {
+        applyHoverEffects(image, caption, 50, -5);
     });
 
-    caption.addEventListener('mouseout', (event) => {
-        image.style.filter = 'brightness(100%)';
-        image.style.transform = 'translateY(5px)';
-        caption.style.opacity = 1;
+    caption.addEventListener('mouseout', () => {
+        applyHoverEffects(image, caption, 100, 5);
     });
 });
+
 
 document.addEventListener('scroll', () => {
     const topStartY = scrollTopBtn.getBoundingClientRect().height;
