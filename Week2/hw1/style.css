@@ -61,6 +61,16 @@ ul {
     list-style: none;
 }
 
+.move_section {
+    background-color: var(--main-background-color);
+    padding: 0;
+    text-align: center;
+}
+
+.move_section > li {
+    display: inline-block;
+}
+
 .preview ul {
     overflow-x: auto;
     white-space: nowrap;
