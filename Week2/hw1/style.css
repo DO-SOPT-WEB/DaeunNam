@@ -99,6 +99,10 @@ ul {
     overflow: hidden;
 }
 
+.hyperLink > p {
+    margin: 1rem;
+}
+
 .hyperLink {
     margin-bottom: 50px;
     border: 1.5px solid gray;
