@@ -13,6 +13,7 @@ const CATEGORY_LIST = [
   { name: "월급", financeType: "income" },
   { name: "용돈", financeType: "income" }
 ];
+const listScroll = document.querySelector(".scrollArea");
 let totalIncome = 0;
 let totalCost = 0;
 let priceClass = "income_price";
@@ -30,7 +31,6 @@ function updateHistory () {
   const incomeChecked = document.getElementById("income").checked;
   const costChecked = document.getElementById("cost").checked;
   const filteredHistories = filterHistories(incomeChecked, costChecked);
-  let listScroll = document.querySelector(".scrollArea");
   listScroll.innerHTML = "";
 
   for (const history of filteredHistories) {
