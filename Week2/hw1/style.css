@@ -143,7 +143,6 @@ img {
 }
 
 .caption_content{
-    display: flex;
     display: block;
     position: absolute;
     right: 1rem;
