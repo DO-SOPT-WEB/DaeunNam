@@ -44,14 +44,7 @@ function updateHistory () {
 }
 
 function filterHistories (incomeChecked, costChecked) {
-  const filteredHistories = [];
-
-  for (const history of HISTORY_LIST) {
-    if ((history.amount > 0 && incomeChecked) || ( history.amount < 0 && costChecked)) {
-      filteredHistories.push(history);
-    }
-  }
-  return filteredHistories;
+  return HISTORY_LIST.filter(history => (history.amount > 0 && incomeChecked) || (history.amount < 0 && costChecked));
 }
 
 function deleteBtnHandler(listView, history) {
