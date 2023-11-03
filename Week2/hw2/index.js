@@ -33,12 +33,12 @@ function updateHistory () {
   const filteredHistories = filterHistories(incomeChecked, costChecked);
   listScroll.innerHTML = "";
 
-  for (const history of filteredHistories) {
+  filteredHistories.map(history => {
     priceClass = history.amount > 0 ? "income_price" : "cost_price";
     const listView = createListView(history, priceClass);
     deleteBtnHandler(listView, history);
     listScroll.appendChild(listView);
-  }
+  });
   updateBalance();
   filterCategoryList();
 }
