@@ -18,14 +18,6 @@ images.forEach(imageContainer => {
     image.addEventListener('mouseout', () => {
         applyHoverEffects(image, caption, 100, 5);
     });
-
-    caption.addEventListener('mouseover', () => {
-        applyHoverEffects(image, caption, 50, -5);
-    });
-
-    caption.addEventListener('mouseout', () => {
-        applyHoverEffects(image, caption, 100, 5);
-    });
 });
 
 

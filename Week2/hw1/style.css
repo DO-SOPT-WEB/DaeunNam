@@ -158,6 +158,7 @@ img {
 
 .london_image:hover .caption_content, .london_image:hover .caption_title {
     z-index: 2;
+    pointer-events: none;
 }
 
 .london_container {
