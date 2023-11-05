@@ -85,13 +85,13 @@ function updateBalance () {
   totalIncome = 0;
   totalCost = 0;
 
-  for (const history of HISTORY_LIST) {
+  calcultatedHistoryAmounts = HISTORY_LIST.map((history) => {
     if (history.amount > 0) {
       totalIncome += history.amount;
     } else {
       totalCost -= history.amount;
     }
-  }
+  });
   calculateBalance();
 }
 
@@ -181,5 +181,4 @@ function amountShouldbeNumber (amount, newHistory) {
     alert("저장되었습니다.");
   }
 }
-
 
