@@ -11,11 +11,11 @@
     <section class="myStatus">
         <p class="total_txt">나의 자산</p>
         <p class="total">341200</p>
-        <div class="totalIncomeCost">
+        <div class="totalIncomeSpending">
             <img src="./images/plus.png" class="plus" />
             <p class="income">341200</p>
             <img src="./images/minus.png" class="minus"/>
-            <p class="cost">50300</p>
+            <p class="spending">50300</p>
         </div>
     </section>
     <br>
@@ -29,14 +29,14 @@
             <p class="listText">내역 리스트</p>
             <input type="checkbox" id="income" checked>
             <label for="income" class="checkbox-label">수입</label>
-            <input type="checkbox" id="cost" checked>
-            <label for="cost" class="checkbox-label">지출</label>
+            <input type="checkbox" id="spending" checked>
+            <label for="spending" class="checkbox-label">지출</label>
         </article>
     </section>
     <hr>
     <section class="scrollArea">
         <div id="incomeList"></div>
-        <div id="costList"></div>
+        <div id="spendingList"></div>
     </section>
     <div class="modal hidden">
         <div class="modal_content">
@@ -44,8 +44,8 @@
             <div class="radioButtons">
                 <input type="radio" id="radio-income" name="finance" checked/>
                 <label for="radio-income" class="radio-label">수입</label>
-                <input type="radio" id="radio-cost" name="finance"/>
-                <label for="radio-cost" class="radio-label">지출</label>
+                <input type="radio" id="radio-spending" name="finance"/>
+                <label for="radio-spending" class="radio-label">지출</label>
             </div>
             
             <div class="type-of-finance">종류</div>

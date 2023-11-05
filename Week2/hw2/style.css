@@ -42,7 +42,7 @@ body {
     font-weight: bold;
 }
 
-.totalIncomeCost {
+.totalIncomeSpending {
     padding-bottom: 1rem;
 }
 
@@ -60,7 +60,7 @@ body {
     color: blue;
 }
 
-.cost {
+.spending {
     display: inline;
     color: red;
 }
@@ -104,7 +104,7 @@ input.left_btn, input.right_btn, .date {
     font-weight: bold;
 }
 
-#income, #cost, .checkbox-label {
+#income, #spending, .checkbox-label {
     float: right;
     margin-top: 0.3rem;
     margin-right: 0.3rem;
@@ -113,7 +113,7 @@ input.left_btn, input.right_btn, .date {
     padding: 0.3rem 1.5rem;
 }
 
-#income, #cost {
+#income, #spending {
     display: none;
 }
 
@@ -122,7 +122,7 @@ input[id="income"]:checked + .checkbox-label {
     background-color: rgb(205, 207, 255);
 }
 
-input[id="cost"]:checked + .checkbox-label {
+input[id="spending"]:checked + .checkbox-label {
     border: none;
     border: 1px solid transparent;
     background-color: rgb(205, 207, 255);
@@ -151,7 +151,7 @@ ul, li {
     list-style-type: none;
 }
 
-.category, .content, .cost_price, .income_price, input.delete_btn {
+.category, .content, .spending_price, .income_price, input.delete_btn {
     display: inline-block;
     position: relative;
 }
@@ -172,13 +172,13 @@ ul, li {
     font-weight: bold;
 }
 
-.cost_price, .income_price {    
+.spending_price, .income_price {    
     right: 0.1rem;
     bottom: -1.3rem;
     margin-left: auto;
 }
 
-.cost_price {
+.spending_price {
     color: red;
 }
 
@@ -265,7 +265,7 @@ footer {
     text-align: center;
 }
 
-#radio-income, #radio-cost, .radio-label {
+#radio-income, #radio-spending, .radio-label {
     margin-top: 0.3rem;
     margin-right: 0.3rem;
     border: 1px solid gray;
@@ -273,7 +273,7 @@ footer {
     padding: 0.3rem 1.5rem 0.3rem 1.5rem;
 }
 
-#radio-income, #radio-cost {
+#radio-income, #radio-spending {
     display: none;
 }
 
@@ -282,7 +282,7 @@ input[id="radio-income"]:checked + .radio-label {
     background-color: rgb(155, 158, 248);
 }
 
-input[id="radio-cost"]:checked + .radio-label {
+input[id="radio-spending"]:checked + .radio-label {
     border: none;
     border: 1px solid transparent;
     background-color: rgb(155, 158, 248);

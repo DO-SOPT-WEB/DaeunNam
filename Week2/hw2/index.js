@@ -7,20 +7,20 @@ const HISTORY_LIST = [
   { category: "식비", content: "강남역 깍뚝에서 삼쏘", amount: -30000 }
 ];
 const CATEGORY_LIST = [
-  { name: "식비", financeType: "cost" },
-  { name: "취미", financeType: "cost" },
-  { name: "영화", financeType: "cost" },
+  { name: "식비", financeType: "spending" },
+  { name: "취미", financeType: "spending" },
+  { name: "영화", financeType: "spending" },
   { name: "월급", financeType: "income" },
   { name: "용돈", financeType: "income" }
 ];
 const listScroll = document.querySelector(".scrollArea");
 let totalIncome = 0;
-let totalCost = 0;
+let totalSpending = 0;
 let priceClass = "income_price";
 let financeType = "income";
 
 document.getElementById("income").addEventListener("change", updateHistory);
-document.getElementById("cost").addEventListener("change", updateHistory);
+document.getElementById("spending").addEventListener("change", updateHistory);
 document.querySelector('.save_btn').addEventListener('click', addHistoryToList);
 updateHistory();
 checkRadioFinanceType();
@@ -29,12 +29,12 @@ closeModal();
 
 function updateHistory () {
   const incomeChecked = document.getElementById("income").checked;
-  const costChecked = document.getElementById("cost").checked;
-  const filteredHistories = filterHistories(incomeChecked, costChecked);
+  const spendingChecked = document.getElementById("spending").checked;
+  const filteredHistories = filterHistories(incomeChecked, spendingChecked);
   listScroll.innerHTML = "";
 
   filteredHistories.map(history => {
-    priceClass = history.amount > 0 ? "income_price" : "cost_price";
+    priceClass = history.amount > 0 ? "income_price" : "spending_price";
     const listView = createListView(history, priceClass);
     deleteBtnHandler(listView, history);
     listScroll.appendChild(listView);
@@ -43,8 +43,8 @@ function updateHistory () {
   filterCategoryList();
 }
 
-function filterHistories (incomeChecked, costChecked) {
-  return HISTORY_LIST.filter(history => (history.amount > 0 && incomeChecked) || (history.amount < 0 && costChecked));
+function filterHistories (incomeChecked, spendingChecked) {
+  return HISTORY_LIST.filter(history => (history.amount > 0 && incomeChecked) || (history.amount < 0 && spendingChecked));
 }
 
 function deleteBtnHandler(listView, history) {
@@ -83,13 +83,13 @@ function deleteHistory (listView, history) {
 
 function updateBalance () {
   totalIncome = 0;
-  totalCost = 0;
+  totalSpending = 0;
 
   calcultatedHistoryAmounts = HISTORY_LIST.map((history) => {
     if (history.amount > 0) {
       totalIncome += history.amount;
     } else {
-      totalCost -= history.amount;
+      totalSpending -= history.amount;
     }
   });
   calculateBalance();
@@ -98,12 +98,12 @@ function updateBalance () {
 function calculateBalance () {
   const totalElement = document.querySelector(".total");
   const incomeElement = document.querySelector(".income");
-  const costElement = document.querySelector(".cost");
+  const spendingElement = document.querySelector(".spending");
 
-  balance = INIT_BALANCE + totalIncome - totalCost;
+  balance = INIT_BALANCE + totalIncome - totalSpending;
   totalElement.textContent = balance;
   incomeElement.textContent = totalIncome;
-  costElement.textContent = totalCost;
+  spendingElement.textContent = totalSpending;
 }
 
 function checkRadioFinanceType () {
@@ -111,8 +111,8 @@ function checkRadioFinanceType () {
     radio.addEventListener("change", function() {
       if (document.getElementById("radio-income").checked) {
         financeType = "income";
-      } else if (document.getElementById("radio-cost").checked) {
-        financeType = "cost";
+      } else if (document.getElementById("radio-spending").checked) {
+        financeType = "spending";
       }
       filterCategoryList();
     });
@@ -126,8 +126,8 @@ function filterCategoryList() {
   const filterCategories = new Set(
     CATEGORY_LIST
       .filter(category => {
-        if (financeType === 'cost') 
-          return category.financeType === 'cost';
+        if (financeType === 'spending') 
+          return category.financeType === 'spending';
         else
           return category.financeType === 'income';
       })
