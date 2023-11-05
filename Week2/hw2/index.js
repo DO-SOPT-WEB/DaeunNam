@@ -161,7 +161,7 @@ function closeModal () {
 function addHistoryToList() {
   const financeType = document.querySelector('input[name="finance"]:checked').id;
   const category = document.querySelector('.category-list').value;
-  const amount = parseFloat(document.querySelector('.textbox[name="amount"]').value);
+  const amount = Number(document.querySelector('.textbox[name="amount"]').value);
   const content = document.querySelector('.textbox[name="content"]').value;
   const newHistory = {
     category: category,
@@ -171,14 +171,14 @@ function addHistoryToList() {
   amountShouldbeNumber(amount, newHistory);
 }
 
-function amountShouldbeNumber (amount, newHistory) {
+function amountShouldbeNumber(amount, newHistory) {
   if (isNaN(amount)) {
-    alert("금액을 숫자로 입력해주세요.");
-    return;
+    alert("올바른 값을 입력하세요. 숫자만 입력 가능합니다.");
+  } else if (amount <= 0) {
+    alert("가격을 양수로 입력하세요.");
   } else {
     HISTORY_LIST.push(newHistory);
     updateHistory();
     alert("저장되었습니다.");
   }
 }
-
