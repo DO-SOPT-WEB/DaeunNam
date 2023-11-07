@@ -1,4 +1,3 @@
-
 function Customize() {
     return (
         <>
@@ -7,4 +6,4 @@ function Customize() {
     )
 }
 
-export default Customize
+export default Customize;
