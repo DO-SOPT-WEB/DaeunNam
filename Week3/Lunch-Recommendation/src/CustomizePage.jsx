@@ -1,4 +1,6 @@
 import { useState } from "react";
+import RecommendationPage from "./RecommendationPage";
+import InitScreen from "./components/InitScreen";
 
 const MENU_LIST = [
     { name: "초밥", cuisine: "일식", mainIngredient: "밥", soup: "국물 없음" },
@@ -33,6 +35,13 @@ function CustomizePage() {
         setNextButtonEnabled(true);
     };
 
+    const handleRetry = () => {
+        setStep(1);
+        setOptions('');
+        setRecommendedMenu('');
+        setNextButtonEnabled(false);
+    };
+
     const handleRecommendMenu = () => {
         setStep(step + 1);
         const filteredMenus = MENU_LIST.filter((menu) => {
@@ -50,6 +59,10 @@ function CustomizePage() {
         } else {
             setRecommendedMenu('텅 😅');
         }
+    };
+
+    const returnToComponent = {
+        recommendationPage: <RecommendationPage />,
     };
 
     return (
@@ -160,7 +173,12 @@ function CustomizePage() {
             {step === 4 && (
                 <>
                     <h2>{recommendedMenu} 어때?</h2>
-                    <button type="button">다시 해볼래</button>
+                    <>
+                        <button type="button"
+                            onClick={handleRetry}
+                            key={RecommendationPage}
+                        >다시 해볼래</button>
+                    </>
                 </>
             )}
         </>
