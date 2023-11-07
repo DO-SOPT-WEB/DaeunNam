@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InitScreen from './components/InitScreen';
 import RecommendationPage from './RecommendationPage';
+import './App.css';
 
 const App = () => {
   const [recommendationStart, setRecommendationStart] = useState(false);
