@@ -25,6 +25,7 @@ function CustomizePage() {
 
     const handleNextStep = () => {
         setStep(step + 1);
+        setNextButtonEnabled(false);
     };
 
     const handlePrevStep = () => {
@@ -46,6 +47,7 @@ function CustomizePage() {
                             checked={options.cuisine === "일식"}
                             onChange={() => {
                                 setOptions({ ...options, cuisine: "일식" });
+                                setNextButtonEnabled(true);
                             }}
                         />일식
                     </label>
@@ -55,6 +57,7 @@ function CustomizePage() {
                             checked={options.cuisine === "중식"}
                             onChange={() => {
                                 setOptions({ ...options, cuisine: "중식" });
+                                setNextButtonEnabled(true);
                             }}
                         />중식
                     </label>
@@ -64,11 +67,12 @@ function CustomizePage() {
                             checked={options.cuisine === "한식"}
                             onChange={() => {
                                 setOptions({ ...options, cuisine: "한식" });
+                                setNextButtonEnabled(true);
                             }}
                         />한식
                     </label>
                     <br />
-                    <button onClick={handleNextStep}>다음으로</button>
+                    <button onClick={handleNextStep} disabled={!nextButtonEnabled}>다음으로</button>
                 </>
             )}
             {step === 2 && (
@@ -80,6 +84,7 @@ function CustomizePage() {
                             checked={options.mainIngredient === "밥"}
                             onChange={() => {
                                 setOptions({ ...options, mainIngredient: "밥" });
+                                setNextButtonEnabled(true);
                             }}
                         />밥
                     </label>
@@ -89,6 +94,7 @@ function CustomizePage() {
                             checked={options.mainIngredient === "면"}
                             onChange={() => {
                                 setOptions({ ...options, mainIngredient: "면" });
+                                setNextButtonEnabled(true);
                             }}
                         />면
                     </label>
@@ -98,12 +104,13 @@ function CustomizePage() {
                             checked={options.mainIngredient === "고기/해물"}
                             onChange={() => {
                                 setOptions({ ...options, mainIngredient: "고기/해물" });
+                                setNextButtonEnabled(true);
                             }}
                         />고기/해물
                     </label>
                     <br />
                     <button onClick={handlePrevStep}>이전으로</button>
-                    <button onClick={handleNextStep}>다음으로</button>
+                    <button onClick={handleNextStep} disabled={!nextButtonEnabled}>다음으로</button>
                 </>
             )}
             {step === 3 && (
@@ -115,6 +122,7 @@ function CustomizePage() {
                             checked={options.soup === "국물"}
                             onChange={() => {
                                 setOptions({ ...options, soup: "국물" });
+                                setRecommendedMenu(true);
                             }}
                         />국물 있어야지
                     </label>
@@ -124,12 +132,13 @@ function CustomizePage() {
                             checked={options.soup === "국물 없음"}
                             onChange={() => {
                                 setOptions({ ...options, soup: "국물 없음" });
+                                setRecommendedMenu(true);
                             }}
                         />없어도 돼
                     </label>
                     <br />
                     <button onClick={handlePrevStep}>이전으로</button>
-                    <button onClick={handleRecommendMenu}>메뉴 추천</button>
+                    <button onClick={handleRecommendMenu} disabled={!recommendedMenu}>메뉴 추천</button>
                 </>
             )}
             {step === 4 && (
