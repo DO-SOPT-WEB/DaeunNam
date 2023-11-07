@@ -30,6 +30,7 @@ function CustomizePage() {
 
     const handlePrevStep = () => {
         setStep(step - 1);
+        setNextButtonEnabled(true);
     };
 
     const handleRecommendMenu = () => {
