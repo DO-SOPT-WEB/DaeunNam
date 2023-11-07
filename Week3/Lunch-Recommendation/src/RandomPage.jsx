@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import RetryButton from './components/RetryButton';
+import RecommendationPage from './RecommendationPage';
 
 const RandomPage = () => {
     const menus = ['뼈해장국', '스테이크', '초밥', '파스타', '버거', '짜장면', '카레', '떡볶이'];
@@ -18,12 +18,20 @@ const RandomPage = () => {
         }
     }, [time, menus]);
 
+    const handleRetry = () => {
+        setTime(3);
+        setRecommendedMenu(null);
+    };
+
     return (
         <div>
             {time > 0 ? (
                 <h2>{time}</h2>
             ) : (
-                <h3>오늘의 추천 메뉴: {recommendedMenu}</h3>
+                <>
+                    <h3>오늘의 추천 메뉴: {recommendedMenu}</h3>
+                    <button type="button" onClick={handleRetry}>다시 해볼래</button>
+                </>
             )}
         </div>
     );

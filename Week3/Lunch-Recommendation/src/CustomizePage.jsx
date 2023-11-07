@@ -1,6 +1,5 @@
 import { useState } from "react";
 import RecommendationPage from "./RecommendationPage";
-import InitScreen from "./components/InitScreen";
 
 const MENU_LIST = [
     { name: "초밥", cuisine: "일식", mainIngredient: "밥", soup: "국물 없음" },
