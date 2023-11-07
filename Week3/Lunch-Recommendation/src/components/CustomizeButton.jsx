@@ -1,4 +1,4 @@
-function Customize() {
+function CustomizeButton() {
     return (
         <>
             <button type="button">골라 먹을래</button>
@@ -6,4 +6,4 @@ function Customize() {
     )
 }
 
-export default Customize;
+export default CustomizeButton;

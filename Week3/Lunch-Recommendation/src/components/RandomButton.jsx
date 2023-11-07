@@ -1,4 +1,4 @@
-function Random() {
+function RandomButton() {
     return (
         <>
             <button type="button">아무거나 먹을래</button>
@@ -6,4 +6,4 @@ function Random() {
     )
 }
 
-export default Random
+export default RandomButton

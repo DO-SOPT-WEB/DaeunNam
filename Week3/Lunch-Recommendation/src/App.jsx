@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import InitScreen from './components/InitScreen';
-
+import styled from 'styled-components';
 
 const App = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -9,8 +9,8 @@ const App = () => {
     setSelectedOption(option);
   };
 
-  const handleStart = () => {
-    setSelectedOption(null);
+  const handleStart = (option) => {
+    setSelectedOption(option);
   };
 
   const handleCancel = () => {
@@ -18,12 +18,12 @@ const App = () => {
   };
 
   return (
-    <>
+    <MainView>
       {selectedOption ? (
         <>
           <InitScreen />
-          <h2>{selectedOption}</h2>
-          <button onClick={handleStart} type='button'>Start!</button>
+          <SelectedOption>{selectedOption}</SelectedOption>
+          <button onClick={() => handleStart(selectedOption)} type='button'>Start!</button>
           <button onClick={handleCancel} type='button'>돌아가기</button>
         </>
       ) : (
@@ -33,8 +33,16 @@ const App = () => {
           <button onClick={() => handleSelect('아무거나 먹을래')}>아무거나 먹을래</button>
         </>
       )}
-    </>
+    </MainView>
   );
 }
 
 export default App;
+
+const MainView = styled.div`
+  text-align: center;
+`
+
+const SelectedOption = styled.h2`
+  
+`
