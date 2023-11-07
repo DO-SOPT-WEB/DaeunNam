@@ -1,19 +1,29 @@
 import { useState } from 'react';
 import InitScreen from './components/InitScreen';
 import styled from 'styled-components';
+import CustomizeButton from './components/CustomizeButton';
+import RandomButton from './components/RandomButton';
+import CustomizePage from './CustomizePage';
+import RandomPage from './RandomPage';
 
 const App = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const [recommendationStart, setRecommendationStart] = useState(false);
 
-  const handleSelect = (option) => {
-    setSelectedOption(option);
+  const handleStart = () => {
+    setRecommendationStart(true);
   };
 
-  const handleStart = (option) => {
-    setSelectedOption(option);
+  const handleCustomize = () => {
+    setSelectedOption('customize');
+  };
+
+  const handleRandom = () => {
+    setSelectedOption('random');
   };
 
   const handleCancel = () => {
+    setRecommendationStart(false);
     setSelectedOption(null);
   };
 
@@ -23,14 +33,21 @@ const App = () => {
         <>
           <InitScreen />
           <SelectedOption>{selectedOption}</SelectedOption>
-          <button onClick={() => handleStart(selectedOption)} type='button'>Start!</button>
-          <button onClick={handleCancel} type='button'>돌아가기</button>
+          {((selectedOption === 'customize') && !recommendationStart ||
+            (selectedOption === 'random') && !recommendationStart) ? (
+            <>
+              <button onClick={handleStart} type='button'>Start!</button>
+              <button onClick={handleCancel} type='button'>돌아가기</button>
+            </>
+          ) : null}
+          {recommendationStart && selectedOption === 'customize' ? <CustomizePage /> : null}
+          {recommendationStart && selectedOption === 'random' ? <RandomPage /> : null}
         </>
       ) : (
         <>
           <InitScreen />
-          <button onClick={() => handleSelect('골라 먹을래')}>골라 먹을래</button>
-          <button onClick={() => handleSelect('아무거나 먹을래')}>아무거나 먹을래</button>
+          <CustomizeButton handleCustomize={handleCustomize} />
+          <RandomButton handleRandom={handleRandom} />
         </>
       )}
     </MainView>
@@ -44,5 +61,4 @@ const MainView = styled.div`
 `
 
 const SelectedOption = styled.h2`
-  
 `

@@ -1,9 +1,11 @@
-function CustomizeButton() {
+import handleCustom from '../App';
+
+function CustomizeButton({ handleCustomize }) {
     return (
-        <>
-            <button type="button">골라 먹을래</button>
-        </>
-    )
+        <div>
+            <button type='button' onClick={handleCustomize}>골라 먹을래</button>
+        </div>
+    );
 }
 
-export default CustomizeButton;
+export default CustomizeButton
