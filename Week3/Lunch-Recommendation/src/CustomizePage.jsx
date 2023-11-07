@@ -88,7 +88,7 @@ function CustomizePage() {
                         />한식
                     </label>
                     <br />
-                    <button onClick={handleNextStep} disabled={!nextButtonEnabled}>다음으로</button>
+                    <button type="button" onClick={handleNextStep} disabled={!nextButtonEnabled}>다음으로</button>
                 </>
             )}
             {step === 2 && (
@@ -125,8 +125,8 @@ function CustomizePage() {
                         />고기/해물
                     </label>
                     <br />
-                    <button onClick={handlePrevStep}>이전으로</button>
-                    <button onClick={handleNextStep} disabled={!nextButtonEnabled}>다음으로</button>
+                    <button type="button" onClick={handlePrevStep}>이전으로</button>
+                    <button type="button" onClick={handleNextStep} disabled={!nextButtonEnabled}>다음으로</button>
                 </>
             )}
             {step === 3 && (
@@ -153,13 +153,14 @@ function CustomizePage() {
                         />없어도 돼
                     </label>
                     <br />
-                    <button onClick={handlePrevStep}>이전으로</button>
-                    <button onClick={handleRecommendMenu} disabled={!recommendedMenu}>메뉴 추천</button>
+                    <button type="button" onClick={handlePrevStep}>이전으로</button>
+                    <button type="button" onClick={handleRecommendMenu} disabled={!recommendedMenu}>메뉴 추천</button>
                 </>
             )}
             {step === 4 && (
                 <>
                     <h2>{recommendedMenu} 어때?</h2>
+                    <button type="button">다시 해볼래</button>
                 </>
             )}
         </>
