@@ -1,12 +1,8 @@
-import { useState } from 'react';
+import React from 'react';
 import CustomizeButton from './CustomizeButton';
 import RandomButton from './RandomButton';
-import CustomizePage from '../CustomizePage';
-import RandomPage from '../RandomPage';
 
-function InitScreen() {
-    const [selectedOption, setSelectedOption] = useState(null);
-    const [recommendationStart, setRecommendationStart] = useState(false);
+function InitScreen({ recommendationStart, setRecommendationStart, selectedOption, setSelectedOption }) {
 
     const handleStart = () => {
         setRecommendationStart(true);
@@ -37,8 +33,6 @@ function InitScreen() {
                             <button onClick={handleCancel} type='button'>돌아가기</button>
                         </>
                     ) : null}
-                    {recommendationStart && selectedOption === 'customize' ? <CustomizePage /> : null}
-                    {recommendationStart && selectedOption === 'random' ? <RandomPage /> : null}
                 </>
             ) : (
                 <>
