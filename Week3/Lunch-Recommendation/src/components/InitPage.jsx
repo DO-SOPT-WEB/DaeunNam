@@ -1,6 +1,5 @@
 import React from 'react';
-import CustomizeButton from './CustomizeButton';
-import RandomButton from './RandomButton';
+import RecommendTypeButton from './RecommendTypeButton';
 function InitPage({ recommendationStart, setRecommendationStart, selectedOption, setSelectedOption }) {
 
     const handleStart = () => {
@@ -37,12 +36,9 @@ function InitPage({ recommendationStart, setRecommendationStart, selectedOption,
                 </>
             ) : (
                 <>
-                    <CustomizeButton
+                    <RecommendTypeButton
                         setselectedOption={setSelectedOption}
                         handleCustomize={handleCustomize}
-                        setRecommendationStart={setRecommendationStart} />
-                    <RandomButton
-                        setselectedOption={setSelectedOption}
                         handleRandom={handleRandom}
                         setRecommendationStart={setRecommendationStart} />
                 </>
