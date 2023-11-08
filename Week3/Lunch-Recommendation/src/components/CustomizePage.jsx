@@ -1,18 +1,10 @@
 import { useState } from "react";
 import RetryButton from "./RetryButton";
-
-const MENU_LIST = [
-    { name: "초밥", cuisine: "일식", mainIngredient: "밥", soup: "국물 없음" },
-    { name: "짬뽕", cuisine: "중식", mainIngredient: "면", soup: "국물" },
-    { name: "불고기", cuisine: "한식", mainIngredient: "고기/해물", soup: "국물 없음" },
-    { name: "뼈해장국", cuisine: "한식", mainIngredient: "고기/해물", soup: "국물" },
-    { name: "마라탕", cuisine: "중식", mainIngredient: "고기/해물", soup: "국물" },
-    { name: "간장계란밥", cuisine: "한식", mainIngredient: "밥", soup: "국물 없음" },
-    { name: "우동", cuisine: "일식", mainIngredient: "면", soup: "국물" },
-    { name: "라멘", cuisine: "일식", mainIngredient: "면", soup: "국물" },
-    { name: "돈까스", cuisine: "일식", mainIngredient: "고기/해물", soup: "국물 없음" },
-    { name: "비빔밥", cuisine: "한식", mainIngredient: "밥", soup: "국물 없음" }
-]
+import ChooseCustomizedMenu from "./ChooseCustomizedMenu";
+import FirstStep from "./FirstStep";
+import MENU_LIST from '../constants/MenuData';
+import SecondStep from "./SecondStep";
+import ThirdStep from "./ThirdStep";
 
 function CustomizePage({ setRecommendationStart }) {
     const [step, setStep] = useState(1);
@@ -34,128 +26,49 @@ function CustomizePage({ setRecommendationStart }) {
         setNextButtonEnabled(true);
     };
 
-    const handleRecommendMenu = () => {
-        setStep(step + 1);
-        const filteredMenus = MENU_LIST.filter((menu) => {
-            return (
-                (options.cuisine === '' || menu.cuisine === options.cuisine) &&
-                (options.mainIngredient === '' || menu.mainIngredient === options.mainIngredient) &&
-                (options.soup === '' || menu.soup === options.soup)
-            );
-        });
-
-        if (filteredMenus.length > 0) {
-            // 필터링된 메뉴 배열 중 랜덤 인덱스 하나 반환
-            const randomIndex = Math.floor(Math.random() * filteredMenus.length);
-            setRecommendedMenu(filteredMenus[randomIndex].name);
-        } else {
-            setRecommendedMenu('텅 😅');
-        }
-    };
-
     return (
         <>
             {step === 1 && (
                 <>
-                    <h2>Step 1: 어떤 요리가 좋아?</h2>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={options.cuisine === "일식"}
-                            onChange={() => {
-                                setOptions({ ...options, cuisine: "일식" });
-                                setNextButtonEnabled(true);
-                            }}
-                        />일식
-                    </label>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={options.cuisine === "중식"}
-                            onChange={() => {
-                                setOptions({ ...options, cuisine: "중식" });
-                                setNextButtonEnabled(true);
-                            }}
-                        />중식
-                    </label>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={options.cuisine === "한식"}
-                            onChange={() => {
-                                setOptions({ ...options, cuisine: "한식" });
-                                setNextButtonEnabled(true);
-                            }}
-                        />한식
-                    </label>
-                    <br />
-                    <button type="button" onClick={handleNextStep} disabled={!nextButtonEnabled}>다음으로</button>
+                    <FirstStep
+                        options={options}
+                        setOptions={setOptions}
+                        setNextButtonEnabled={setNextButtonEnabled}
+                    />
+                    <button
+                        type="button"
+                        onClick={handleNextStep}
+                        disabled={!nextButtonEnabled}>
+                        다음으로
+                    </button>
                 </>
             )}
             {step === 2 && (
                 <>
-                    <h2>Step 2: 주재료는?</h2>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={options.mainIngredient === "밥"}
-                            onChange={() => {
-                                setOptions({ ...options, mainIngredient: "밥" });
-                                setNextButtonEnabled(true);
-                            }}
-                        />밥
-                    </label>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={options.mainIngredient === "면"}
-                            onChange={() => {
-                                setOptions({ ...options, mainIngredient: "면" });
-                                setNextButtonEnabled(true);
-                            }}
-                        />면
-                    </label>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={options.mainIngredient === "고기/해물"}
-                            onChange={() => {
-                                setOptions({ ...options, mainIngredient: "고기/해물" });
-                                setNextButtonEnabled(true);
-                            }}
-                        />고기/해물
-                    </label>
-                    <br />
+                    <SecondStep
+                        options={options}
+                        setOptions={setOptions}
+                        setNextButtonEnabled={setNextButtonEnabled}
+                    />
                     <button type="button" onClick={handlePrevStep}>이전으로</button>
                     <button type="button" onClick={handleNextStep} disabled={!nextButtonEnabled}>다음으로</button>
                 </>
             )}
             {step === 3 && (
                 <>
-                    <h2>Step 3: 국물은?</h2>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={options.soup === "국물"}
-                            onChange={() => {
-                                setOptions({ ...options, soup: "국물" });
-                                setRecommendedMenu(true);
-                            }}
-                        />국물 좋아
-                    </label>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={options.soup === "국물 없음"}
-                            onChange={() => {
-                                setOptions({ ...options, soup: "국물 없음" });
-                                setRecommendedMenu(true);
-                            }}
-                        />없어도 돼
-                    </label>
-                    <br />
+                    <ThirdStep
+                        options={options}
+                        setOptions={setOptions}
+                        setRecommendedMenu={setRecommendedMenu}
+                    />
                     <button type="button" onClick={handlePrevStep}>이전으로</button>
-                    <button type="button" onClick={handleRecommendMenu} disabled={!recommendedMenu}>메뉴 추천</button>
+                    <ChooseCustomizedMenu
+                        MENU_LIST={MENU_LIST}
+                        options={options}
+                        step={step}
+                        setStep={setStep}
+                        setRecommendedMenu={setRecommendedMenu}
+                        recommendedMenu={recommendedMenu} />
                 </>
             )}
             {step === 4 && (
