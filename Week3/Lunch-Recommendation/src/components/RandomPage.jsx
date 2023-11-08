@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import RetryButton from './RetryButton';
 
 function RandomPage({ setRecommendationStart }) {
     const [time, setTime] = useState(3);
@@ -18,11 +19,6 @@ function RandomPage({ setRecommendationStart }) {
         }
     }, [time, MENUS]);
 
-    const handleRetry = () => {
-        setRecommendedMenu('');
-        setRecommendationStart(false);
-    };
-
     return (
         <div>
             {time > 0 ? (
@@ -30,9 +26,9 @@ function RandomPage({ setRecommendationStart }) {
             ) : (
                 <>
                     <h3>{recommendedMenu} 어때?</h3>
-                    <button type="button" onClick={handleRetry}>
-                        다시 해볼래
-                    </button>
+                    <RetryButton
+                        setRecommendedMenu={setRecommendedMenu}
+                        setRecommendationStart={setRecommendationStart} />
                 </>
             )}
         </div>

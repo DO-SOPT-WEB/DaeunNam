@@ -1,4 +1,4 @@
-import handleRandom from './InitScreen';
+import handleRandom from './InitPage';
 
 function RandomButton({ handleRandom }) {
     return (

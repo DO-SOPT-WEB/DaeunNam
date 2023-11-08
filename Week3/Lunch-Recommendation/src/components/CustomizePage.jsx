@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RetryButton from "./RetryButton";
 
 const MENU_LIST = [
     { name: "초밥", cuisine: "일식", mainIngredient: "밥", soup: "국물 없음" },
@@ -31,12 +32,6 @@ function CustomizePage({ setRecommendationStart }) {
     const handlePrevStep = () => {
         setStep(step - 1);
         setNextButtonEnabled(true);
-    };
-
-    const handleRetry = () => {
-        setStep(1);
-        setRecommendedMenu('');
-        setRecommendationStart(false);
     };
 
     const handleRecommendMenu = () => {
@@ -146,7 +141,7 @@ function CustomizePage({ setRecommendationStart }) {
                                 setOptions({ ...options, soup: "국물" });
                                 setRecommendedMenu(true);
                             }}
-                        />국물 있어야지
+                        />국물 좋아
                     </label>
                     <label>
                         <input
@@ -166,9 +161,9 @@ function CustomizePage({ setRecommendationStart }) {
             {step === 4 && (
                 <>
                     <h2>{recommendedMenu} 어때?</h2>
-                    <button type="button" onClick={handleRetry}>
-                        다시 해볼래
-                    </button>
+                    <RetryButton
+                        setRecommendedMenu={setRecommendedMenu}
+                        setRecommendationStart={setRecommendationStart} />
                 </>
             )}
         </>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import InitScreen from './components/InitScreen';
-import RecommendationPage from './RecommendationPage';
+import InitPage from './components/InitPage';
+import RecommendationPage from './components/RecommendationPage';
 import './App.css';
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
         <RecommendationPage selectedOption={selectedOption} setRecommendationStart={setRecommendationStart} />
       ) : (
         <>
-          <InitScreen
+          <InitPage
             recommendationStart={recommendationStart}
             setRecommendationStart={setRecommendationStart}
             selectedOption={selectedOption}
