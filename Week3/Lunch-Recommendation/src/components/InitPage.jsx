@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomizeButton from './CustomizeButton';
 import RandomButton from './RandomButton';
-function InitScreen({ recommendationStart, setRecommendationStart, selectedOption, setSelectedOption }) {
+function InitPage({ recommendationStart, setRecommendationStart, selectedOption, setSelectedOption }) {
 
     const handleStart = () => {
         setRecommendationStart(true);
@@ -51,4 +51,4 @@ function InitScreen({ recommendationStart, setRecommendationStart, selectedOptio
     );
 }
 
-export default InitScreen;
+export default InitPage;
