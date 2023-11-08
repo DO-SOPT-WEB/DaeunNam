@@ -13,7 +13,7 @@ const MENU_LIST = [
     { name: "비빔밥", cuisine: "한식", mainIngredient: "밥", soup: "국물 없음" }
 ]
 
-function CustomizePage({ setRecommendationStart }) {
+function CustomizePage({ setSelectedOption, setRecommendationStart }) {
     const [step, setStep] = useState(1);
     const [options, setOptions] = useState({
         cuisine: "",
@@ -39,6 +39,11 @@ function CustomizePage({ setRecommendationStart }) {
         setRecommendationStart(false);
     };
 
+    const handleReset = () => {
+        setSelectedOption(null);
+        setRecommendationStart(false);
+    }
+
     const handleRecommendMenu = () => {
         setStep(step + 1);
         const filteredMenus = MENU_LIST.filter((menu) => {
@@ -54,11 +59,9 @@ function CustomizePage({ setRecommendationStart }) {
             const randomIndex = Math.floor(Math.random() * filteredMenus.length);
             setRecommendedMenu(filteredMenus[randomIndex].name);
         } else {
-            setRecommendedMenu(null);
-            <h2>텅 😅</h2>
+            setRecommendedMenu('텅 😅');
         }
     };
-
 
     return (
         <>

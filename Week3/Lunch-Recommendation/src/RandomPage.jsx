@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function RandomPage({ setRecommendationStart }) {
+function RandomPage({ setSelectedOption, setRecommendationStart }) {
     const [time, setTime] = useState(3);
     const [recommendedMenu, setRecommendedMenu] = useState(null);
     const MENUS = [

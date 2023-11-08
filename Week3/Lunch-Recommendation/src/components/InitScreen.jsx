@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CustomizeButton from './CustomizeButton';
 import RandomButton from './RandomButton';
 function InitScreen({ recommendationStart, setRecommendationStart, selectedOption, setSelectedOption }) {
@@ -38,9 +38,11 @@ function InitScreen({ recommendationStart, setRecommendationStart, selectedOptio
             ) : (
                 <>
                     <CustomizeButton
+                        setselectedOption={setSelectedOption}
                         handleCustomize={handleCustomize}
                         setRecommendationStart={setRecommendationStart} />
                     <RandomButton
+                        setselectedOption={setSelectedOption}
                         handleRandom={handleRandom}
                         setRecommendationStart={setRecommendationStart} />
                 </>
