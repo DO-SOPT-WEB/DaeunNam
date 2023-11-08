@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CustomizeButton from './CustomizeButton';
 import RandomButton from './RandomButton';
-
 function InitScreen({ recommendationStart, setRecommendationStart, selectedOption, setSelectedOption }) {
 
     const handleStart = () => {
         setRecommendationStart(true);
     };
 
+    const handleCancel = () => {
+        setRecommendationStart(false);
+        setSelectedOption(null);
+    };
+
     const handleCustomize = () => {
+        setRecommendationStart(false);
         setSelectedOption('customize');
     };
 
     const handleRandom = () => {
-        setSelectedOption('random');
-    };
-
-    const handleCancel = () => {
         setRecommendationStart(false);
-        setSelectedOption(null);
+        setSelectedOption('random');
     };
 
     return (
@@ -27,17 +28,21 @@ function InitScreen({ recommendationStart, setRecommendationStart, selectedOptio
             {selectedOption ? (
                 <>
                     <h3>{selectedOption}</h3>
-                    {((selectedOption === 'customize' || selectedOption === 'random') && !recommendationStart) ? (
+                    {!recommendationStart ? (
                         <>
-                            <button onClick={handleStart} type='button'>Start!</button>
-                            <button onClick={handleCancel} type='button'>돌아가기</button>
+                            <button onClick={() => handleStart()} type='button'>Start!</button>
+                            <button onClick={() => handleCancel()} type='button'>돌아가기</button>
                         </>
                     ) : null}
                 </>
             ) : (
                 <>
-                    <CustomizeButton handleCustomize={handleCustomize} />
-                    <RandomButton handleRandom={handleRandom} />
+                    <CustomizeButton
+                        handleCustomize={handleCustomize}
+                        setRecommendationStart={setRecommendationStart} />
+                    <RandomButton
+                        handleRandom={handleRandom}
+                        setRecommendationStart={setRecommendationStart} />
                 </>
             )}
         </>

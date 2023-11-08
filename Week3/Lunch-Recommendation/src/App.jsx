@@ -10,8 +10,9 @@ const App = () => {
   return (
     <>
       <h1>😋 점메추 😋</h1>
+      {console.log(recommendationStart)}
       {recommendationStart ? (
-        <RecommendationPage selectedOption={selectedOption} />
+        <RecommendationPage selectedOption={selectedOption} setRecommendationStart={setRecommendationStart} />
       ) : (
         <InitScreen
           recommendationStart={recommendationStart}

@@ -2,13 +2,17 @@ import React from 'react';
 import CustomizePage from './CustomizePage';
 import RandomPage from './RandomPage';
 
-function RecommendationPage({ selectedOption }) {
+function RecommendationPage({ selectedOption, setRecommendationStart }) {
     return (
         <>
             {selectedOption === 'customize' ? (
-                <CustomizePage />
+                <>
+                    <CustomizePage setRecommendationStart={setRecommendationStart} />
+                </>
             ) : selectedOption === 'random' ? (
-                <RandomPage />
+                <>
+                    <RandomPage setRecommendationStart={setRecommendationStart} />
+                </>
             ) : null}
         </>
     );

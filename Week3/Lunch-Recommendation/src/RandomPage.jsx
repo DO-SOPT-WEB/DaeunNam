@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import MENUS from './RecommendationPage';
 
-const RandomPage = () => {
+function RandomPage({ setRecommendationStart }) {
     const [time, setTime] = useState(3);
     const [recommendedMenu, setRecommendedMenu] = useState(null);
     const MENUS = [
@@ -20,8 +19,8 @@ const RandomPage = () => {
     }, [time, MENUS]);
 
     const handleRetry = () => {
-        setTime(3);
-        setRecommendedMenu(null);
+        setRecommendedMenu('');
+        setRecommendationStart(false);
     };
 
     return (
@@ -31,11 +30,13 @@ const RandomPage = () => {
             ) : (
                 <>
                     <h3>{recommendedMenu} 어때?</h3>
-                    <button type="button" onClick={handleRetry}>다시 해볼래</button>
+                    <button type="button" onClick={handleRetry}>
+                        다시 해볼래
+                    </button>
                 </>
             )}
         </div>
     );
-};
+}
 
 export default RandomPage;

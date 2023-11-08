@@ -1,5 +1,4 @@
 import { useState } from "react";
-import RecommendationPage from "./RecommendationPage";
 
 const MENU_LIST = [
     { name: "초밥", cuisine: "일식", mainIngredient: "밥", soup: "국물 없음" },
@@ -14,7 +13,7 @@ const MENU_LIST = [
     { name: "비빔밥", cuisine: "한식", mainIngredient: "밥", soup: "국물 없음" }
 ]
 
-function CustomizePage() {
+function CustomizePage({ setRecommendationStart }) {
     const [step, setStep] = useState(1);
     const [options, setOptions] = useState({
         cuisine: "",
@@ -36,9 +35,8 @@ function CustomizePage() {
 
     const handleRetry = () => {
         setStep(1);
-        setOptions('');
         setRecommendedMenu('');
-        setNextButtonEnabled(false);
+        setRecommendationStart(false);
     };
 
     const handleRecommendMenu = () => {
@@ -56,13 +54,11 @@ function CustomizePage() {
             const randomIndex = Math.floor(Math.random() * filteredMenus.length);
             setRecommendedMenu(filteredMenus[randomIndex].name);
         } else {
-            setRecommendedMenu('텅 😅');
+            setRecommendedMenu(null);
+            <h2>텅 😅</h2>
         }
     };
 
-    const returnToComponent = {
-        recommendationPage: <RecommendationPage />,
-    };
 
     return (
         <>
@@ -172,12 +168,9 @@ function CustomizePage() {
             {step === 4 && (
                 <>
                     <h2>{recommendedMenu} 어때?</h2>
-                    <>
-                        <button type="button"
-                            onClick={handleRetry}
-                            key={RecommendationPage}
-                        >다시 해볼래</button>
-                    </>
+                    <button type="button" onClick={handleRetry}>
+                        다시 해볼래
+                    </button>
                 </>
             )}
         </>

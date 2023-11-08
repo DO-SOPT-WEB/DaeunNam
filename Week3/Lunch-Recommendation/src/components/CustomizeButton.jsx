@@ -1,4 +1,4 @@
-import handleCustom from '../App';
+import handleCustom from './InitScreen';
 
 function CustomizeButton({ handleCustomize }) {
     return (
