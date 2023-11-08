@@ -1,12 +1,12 @@
 import { useState } from "react";
 import RetryButton from "./RetryButton";
-import ChooseCustomizedMenu from "./ChooseCustomizedMenu";
 import FirstStep from "./FirstStep";
 import MENU_LIST from '../constants/MenuData';
 import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
+import ReturnCustomizeMenu from "./ReturnCustomizeMenu";
 
-function CustomizePage({ setRecommendationStart }) {
+function CustomizeMenu({ setRecommendationStart }) {
     const [step, setStep] = useState(1);
     const [options, setOptions] = useState({
         cuisine: "",
@@ -62,7 +62,7 @@ function CustomizePage({ setRecommendationStart }) {
                         setRecommendedMenu={setRecommendedMenu}
                     />
                     <button type="button" onClick={handlePrevStep}>이전으로</button>
-                    <ChooseCustomizedMenu
+                    <ReturnCustomizeMenu
                         MENU_LIST={MENU_LIST}
                         options={options}
                         step={step}
@@ -83,4 +83,4 @@ function CustomizePage({ setRecommendationStart }) {
     );
 }
 
-export default CustomizePage;
+export default CustomizeMenu;

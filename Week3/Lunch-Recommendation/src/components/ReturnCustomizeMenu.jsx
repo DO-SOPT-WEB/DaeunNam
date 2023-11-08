@@ -1,7 +1,7 @@
 import React from 'react';
 import MENU_LIST from '../constants/MenuData';
 
-function ChooseCustomizedMenu({ options, setStep, step, setRecommendedMenu, recommendedMenu }) {
+function ReturnCustomizeMenu({ options, setStep, step, setRecommendedMenu, recommendedMenu }) {
     const handleRecommendMenu = () => {
         setStep(step + 1);
         const filteredMenus = MENU_LIST.filter((menu) => {
@@ -28,4 +28,4 @@ function ChooseCustomizedMenu({ options, setStep, step, setRecommendedMenu, reco
     );
 }
 
-export default ChooseCustomizedMenu;
+export default ReturnCustomizeMenu;

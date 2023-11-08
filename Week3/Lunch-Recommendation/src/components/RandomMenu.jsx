@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import RetryButton from './RetryButton';
 import MENUS from '../constants/Menus';
 
-function RandomPage({ setRecommendationStart }) {
+function RandomMenu({ setRecommendationStart }) {
     const [time, setTime] = useState(3);
     const [recommendedMenu, setRecommendedMenu] = useState(null);
 
@@ -33,4 +33,4 @@ function RandomPage({ setRecommendationStart }) {
     );
 }
 
-export default RandomPage;
+export default RandomMenu;

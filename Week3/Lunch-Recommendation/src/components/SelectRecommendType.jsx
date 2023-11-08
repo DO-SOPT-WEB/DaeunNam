@@ -1,6 +1,7 @@
 import React from 'react';
 import RecommendTypeButton from './RecommendTypeButton';
-function InitPage({ recommendationStart, setRecommendationStart, selectedOption, setSelectedOption }) {
+
+function SelectRecommendType({ recommendationStart, setRecommendationStart, selectedOption, setSelectedOption }) {
 
     const handleStart = () => {
         setRecommendationStart(true);
@@ -47,4 +48,4 @@ function InitPage({ recommendationStart, setRecommendationStart, selectedOption,
     );
 }
 
-export default InitPage;
+export default SelectRecommendType;

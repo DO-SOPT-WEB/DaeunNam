@@ -1,6 +1,6 @@
 import React from 'react';
-import handleCustom from './InitPage';
-import handleRandom from './InitPage';
+import handleCustom from './SelectRecommendType';
+import handleRandom from './SelectRecommendType';
 
 function RecommendTypeButton({ handleRandom, handleCustomize }) {
     return (
