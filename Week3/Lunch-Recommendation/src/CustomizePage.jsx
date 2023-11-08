@@ -13,7 +13,7 @@ const MENU_LIST = [
     { name: "비빔밥", cuisine: "한식", mainIngredient: "밥", soup: "국물 없음" }
 ]
 
-function CustomizePage({ setSelectedOption, setRecommendationStart }) {
+function CustomizePage({ setRecommendationStart }) {
     const [step, setStep] = useState(1);
     const [options, setOptions] = useState({
         cuisine: "",
@@ -38,11 +38,6 @@ function CustomizePage({ setSelectedOption, setRecommendationStart }) {
         setRecommendedMenu('');
         setRecommendationStart(false);
     };
-
-    const handleReset = () => {
-        setSelectedOption(null);
-        setRecommendationStart(false);
-    }
 
     const handleRecommendMenu = () => {
         setStep(step + 1);
