@@ -25,7 +25,7 @@ export const Contents = styled.div`
   display: block;
   text-align: center;
   background-color: var(--section-background-color);
-  height: 18rem;
+  height: 16rem;
   padding: 5rem 10rem 15rem 10rem;
   margin: 5rem 10em;
   border-radius: 3rem;
