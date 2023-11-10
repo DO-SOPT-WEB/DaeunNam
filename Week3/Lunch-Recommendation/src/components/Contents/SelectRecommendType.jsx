@@ -1,10 +1,6 @@
 import React from 'react';
 import RecommendTypeButton from './RecommendTypeButton';
-import {
-    SelectOptionText,
-    SelectedOption,
-    Start,
-} from './style';
+import * as S from './style';
 
 function SelectRecommendType({ recommendationStart, setRecommendationStart, selectedOption, setSelectedOption }) {
 
@@ -24,18 +20,18 @@ function SelectRecommendType({ recommendationStart, setRecommendationStart, sele
 
     return (
         <>
-            <SelectOptionText>원하는 추천 방식을 골라줘!</SelectOptionText>
+            <S.SelectOptionText>원하는 추천 방식을 골라줘!</S.SelectOptionText>
             {selectedOption ? (
                 <>
                     {selectedOption === 'customize' ? (
-                        <SelectedOption>골라 먹을래</SelectedOption>
+                        <S.SelectedOption>골라 먹을래</S.SelectedOption>
                     ) : (
-                        <SelectedOption>아무거나 먹을래</SelectedOption>
+                        <S.SelectedOption>아무거나 먹을래</S.SelectedOption>
                     )}
                     {!recommendationStart ? (
-                        <Start>
+                        <S.Start>
                             <button onClick={() => handleStart()} type='button'>Start!</button>
-                        </Start>
+                        </S.Start>
                     ) : null}
                 </>
             ) : (
