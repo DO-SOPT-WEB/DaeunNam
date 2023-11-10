@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import RetryButton from './RetryButton';
-import MENUS from '../constants/Menus';
+import RetryButton from '../RetryButton';
+import MENUS from '../../../constants/Menus';
+import * as S from '../style';
 
 function RandomMenu({ setRecommendationStart }) {
     const [time, setTime] = useState(3);
@@ -18,18 +19,19 @@ function RandomMenu({ setRecommendationStart }) {
     }, [time, MENUS]);
 
     return (
-        <div>
+        <S.RandomSection>
             {time > 0 ? (
-                <h2>{time}</h2>
+                <S.CountDown>{time}</S.CountDown>
             ) : (
                 <>
-                    <h3>{recommendedMenu} 어때?</h3>
+                    <S.ReturnMenu>{recommendedMenu} 어때?</S.ReturnMenu>
                     <RetryButton
                         setRecommendedMenu={setRecommendedMenu}
                         setRecommendationStart={setRecommendationStart} />
+
                 </>
             )}
-        </div>
+        </S.RandomSection>
     );
 }
 
