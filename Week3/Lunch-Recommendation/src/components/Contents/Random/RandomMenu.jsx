@@ -25,6 +25,10 @@ function RandomMenu({ setRecommendationStart }) {
             ) : (
                 <>
                     <S.ReturnMenu>{recommendedMenu} 어때?</S.ReturnMenu>
+                    <img
+                        src={`/${encodeURIComponent(recommendedMenu)}.png`}
+                        alt={recommendedMenu}
+                    />
                     <RetryButton
                         setRecommendedMenu={setRecommendedMenu}
                         setRecommendationStart={setRecommendationStart} />

@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     --section-background-color: #3A4D39;
     --font-color: #FFFBEB;
     --selected-color: #192118;
+
   }
 
   body {
@@ -17,6 +18,13 @@ export const GlobalStyle = createGlobalStyle`
     min-width: 320px;
     min-height: 100vh;
     background-color: var(--entire-background-color);
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    width: 20rem;
+    height: auto;
   }
 
   button {

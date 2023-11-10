@@ -5,6 +5,7 @@ import MENU_LIST from '../../../constants/MenuData';
 import SecondStep from "./Step/SecondStep";
 import ThirdStep from "./Step/ThirdStep";
 import ReturnCustomizeMenu from "./ReturnCustomizeMenu";
+import * as S from '../style';
 
 function CustomizeMenu({ setRecommendationStart }) {
     const [step, setStep] = useState(1);
@@ -23,7 +24,7 @@ function CustomizeMenu({ setRecommendationStart }) {
 
     const handlePrevStep = () => {
         setStep(step - 1);
-        setNextButtonEnabled(true);
+        setNextButtonEnabled(step > 1);
     };
 
     return (
@@ -80,6 +81,12 @@ function CustomizeMenu({ setRecommendationStart }) {
             {step === 4 && (
                 <>
                     <h2>{recommendedMenu} 어때?</h2>
+                    {recommendedMenu && (
+                        <img
+                            src={`/${encodeURIComponent(recommendedMenu)}.png`}
+                            alt={recommendedMenu}
+                        />
+                    )}
                     <div>
                         <RetryButton
                             setRecommendedMenu={setRecommendedMenu}
