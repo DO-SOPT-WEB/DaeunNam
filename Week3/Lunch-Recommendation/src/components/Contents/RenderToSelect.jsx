@@ -1,6 +1,6 @@
 import React from 'react';
-import CustomizeMenu from './CustomizeMenu';
-import RandomMenu from './RandomMenu';
+import CustomizeMenu from './Customize/CustomizeMenu';
+import RandomMenu from './Random/RandomMenu';
 
 function RenderToSelect({ selectedOption, setRecommendationStart }) {
     return (
