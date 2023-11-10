@@ -4,7 +4,7 @@ function SecondStep({ options, setOptions, setNextButtonEnabled }) {
     return (
         <>
             <h2>Step 2: 주재료는?</h2>
-            <label>
+            <label className={options.mainIngredient === "밥" ? "selected" : ""}>
                 <input
                     type="checkbox"
                     checked={options.mainIngredient === "밥"}
@@ -14,7 +14,7 @@ function SecondStep({ options, setOptions, setNextButtonEnabled }) {
                     }}
                 />밥
             </label>
-            <label>
+            <label className={options.mainIngredient === "면" ? "selected" : ""}>
                 <input
                     type="checkbox"
                     checked={options.mainIngredient === "면"}
@@ -24,7 +24,7 @@ function SecondStep({ options, setOptions, setNextButtonEnabled }) {
                     }}
                 />면
             </label>
-            <label>
+            <label className={options.mainIngredient === "고기/해물" ? "selected" : ""}>
                 <input
                     type="checkbox"
                     checked={options.mainIngredient === "고기/해물"}

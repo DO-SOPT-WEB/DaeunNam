@@ -4,7 +4,7 @@ function ThirdStep({ options, setOptions, setRecommendedMenu }) {
     return (
         <>
             <h2>Step 3: 국물은?</h2>
-            <label>
+            <label className={options.soup === "국물" ? "selected" : ""}>
                 <input
                     type="checkbox"
                     checked={options.soup === "국물"}
@@ -14,7 +14,7 @@ function ThirdStep({ options, setOptions, setRecommendedMenu }) {
                     }}
                 />국물 좋아
             </label>
-            <label>
+            <label className={options.soup === "국물 없음" ? "selected" : ""}>
                 <input
                     type="checkbox"
                     checked={options.soup === "국물 없음"}
