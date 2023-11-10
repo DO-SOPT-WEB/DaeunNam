@@ -33,6 +33,10 @@ button:hover {
   background-color: var(--header-background-color);
 }
 
+button:disabled {
+  opacity: 0.5;
+}
+
 input[type="checkbox"] {
   display: none;
 }
