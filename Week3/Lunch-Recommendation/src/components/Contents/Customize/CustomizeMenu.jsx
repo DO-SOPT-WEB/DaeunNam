@@ -1,9 +1,9 @@
 import { useState } from "react";
-import RetryButton from "./RetryButton";
-import FirstStep from "./FirstStep";
-import MENU_LIST from '../constants/MenuData';
-import SecondStep from "./SecondStep";
-import ThirdStep from "./ThirdStep";
+import RetryButton from "../RetryButton";
+import FirstStep from "./Step/FirstStep";
+import MENU_LIST from '../../../constants/MenuData';
+import SecondStep from "./Step/SecondStep";
+import ThirdStep from "./Step/ThirdStep";
 import ReturnCustomizeMenu from "./ReturnCustomizeMenu";
 
 function CustomizeMenu({ setRecommendationStart }) {
@@ -35,12 +35,14 @@ function CustomizeMenu({ setRecommendationStart }) {
                         setOptions={setOptions}
                         setNextButtonEnabled={setNextButtonEnabled}
                     />
-                    <button
-                        type="button"
-                        onClick={handleNextStep}
-                        disabled={!nextButtonEnabled}>
-                        다음으로
-                    </button>
+                    <div>
+                        <button
+                            type="button"
+                            onClick={handleNextStep}
+                            disabled={!nextButtonEnabled}>
+                            다음으로
+                        </button>
+                    </div>
                 </>
             )}
             {step === 2 && (
@@ -50,8 +52,10 @@ function CustomizeMenu({ setRecommendationStart }) {
                         setOptions={setOptions}
                         setNextButtonEnabled={setNextButtonEnabled}
                     />
-                    <button type="button" onClick={handlePrevStep}>이전으로</button>
-                    <button type="button" onClick={handleNextStep} disabled={!nextButtonEnabled}>다음으로</button>
+                    <div>
+                        <button type="button" onClick={handlePrevStep}>이전으로</button>
+                        <button type="button" onClick={handleNextStep} disabled={!nextButtonEnabled}>다음으로</button>
+                    </div>
                 </>
             )}
             {step === 3 && (
@@ -61,22 +65,26 @@ function CustomizeMenu({ setRecommendationStart }) {
                         setOptions={setOptions}
                         setRecommendedMenu={setRecommendedMenu}
                     />
-                    <button type="button" onClick={handlePrevStep}>이전으로</button>
-                    <ReturnCustomizeMenu
-                        MENU_LIST={MENU_LIST}
-                        options={options}
-                        step={step}
-                        setStep={setStep}
-                        setRecommendedMenu={setRecommendedMenu}
-                        recommendedMenu={recommendedMenu} />
+                    <div>
+                        <button type="button" onClick={handlePrevStep}>이전으로</button>
+                        <ReturnCustomizeMenu
+                            MENU_LIST={MENU_LIST}
+                            options={options}
+                            step={step}
+                            setStep={setStep}
+                            setRecommendedMenu={setRecommendedMenu}
+                            recommendedMenu={recommendedMenu} />
+                    </div>
                 </>
             )}
             {step === 4 && (
                 <>
                     <h2>{recommendedMenu} 어때?</h2>
-                    <RetryButton
-                        setRecommendedMenu={setRecommendedMenu}
-                        setRecommendationStart={setRecommendationStart} />
+                    <div>
+                        <RetryButton
+                            setRecommendedMenu={setRecommendedMenu}
+                            setRecommendationStart={setRecommendationStart} />
+                    </div>
                 </>
             )}
         </>

@@ -1,5 +1,5 @@
 import React from 'react';
-import MENU_LIST from '../constants/MenuData';
+import MENU_LIST from '../../../constants/MenuData';
 
 function ReturnCustomizeMenu({ options, setStep, step, setRecommendedMenu, recommendedMenu }) {
     const handleRecommendMenu = () => {
