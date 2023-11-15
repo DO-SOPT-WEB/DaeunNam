@@ -16,7 +16,7 @@ function RandomMenu({ setRecommendationStart }) {
             const randomIndex = Math.floor(Math.random() * MENUS.length);
             setRecommendedMenu(MENUS[randomIndex]);
         }
-    }, [time, MENUS]);
+    }, [time]);
 
     return (
         <S.RandomSection>
