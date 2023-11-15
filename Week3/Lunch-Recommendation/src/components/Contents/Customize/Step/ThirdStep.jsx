@@ -7,30 +7,23 @@ function NameOfSoup(selectedOption, options, setOptions) {
     }));
 }
 function ThirdStep({ options, setOptions, setIsActiveButton }) {
+    const soups = ["국물", "국물 없음"];
 
     return (
         <>
             <h2>Step 3: 국물은?</h2>
-            <label className={options.soup === "국물" ? "selected" : ""}>
-                <input
-                    type="checkbox"
-                    checked={options.soup === "국물"}
-                    onChange={() => {
-                        NameOfSoup("국물", options, setOptions);
-                        setIsActiveButton(true);
-                    }}
-                />국물 좋아
-            </label>
-            <label className={options.soup === "국물 없음" ? "selected" : ""}>
-                <input
-                    type="checkbox"
-                    checked={options.soup === "국물 없음"}
-                    onChange={() => {
-                        NameOfSoup("국물 없음", options, setOptions);
-                        setIsActiveButton(true);
-                    }}
-                />없어도 돼
-            </label>
+            {soups.map((soup) => (
+                <label key={soup} className={options.soup === soup ? "selected" : ""}>
+                    <input type="checkbox" checked={options.soup === soup}
+                        onChange={() => {
+                            setOptions({ ...options, soup });
+                            setNextButtonEnabled(true);
+                        }}
+                    />
+                    {soup}
+                </label>
+            ))}
+
         </>
 
     )
