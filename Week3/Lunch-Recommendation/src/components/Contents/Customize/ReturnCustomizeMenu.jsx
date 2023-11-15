@@ -13,7 +13,6 @@ function ReturnCustomizeMenu({ options, setStep, step, setRecommendedMenu, isAct
         });
 
         if (filteredMenus.length > 0) {
-            // 필터링된 메뉴 배열 중 랜덤 인덱스 하나 반환
             const randomIndex = Math.floor(Math.random() * filteredMenus.length);
             setRecommendedMenu(filteredMenus[randomIndex].name);
         } else {

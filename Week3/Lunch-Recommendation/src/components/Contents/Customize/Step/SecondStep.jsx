@@ -1,5 +1,12 @@
 import React from 'react'
 
+function NameOfMainIngredient(selectedOption, options, setOptions) {
+    setOptions((prevOptions) => ({
+        ...prevOptions,
+        mainIngredient: selectedOption,
+    }));
+}
+
 function SecondStep({ options, setOptions, setIsActiveButton }) {
     return (
         <>
@@ -9,7 +16,7 @@ function SecondStep({ options, setOptions, setIsActiveButton }) {
                     type="checkbox"
                     checked={options.mainIngredient === "밥"}
                     onChange={() => {
-                        setOptions({ ...options, mainIngredient: "밥" });
+                        NameOfMainIngredient("밥", options, setOptions);
                         setIsActiveButton(true);
                     }}
                 />밥
@@ -19,7 +26,7 @@ function SecondStep({ options, setOptions, setIsActiveButton }) {
                     type="checkbox"
                     checked={options.mainIngredient === "면"}
                     onChange={() => {
-                        setOptions({ ...options, mainIngredient: "면" });
+                        NameOfMainIngredient("면", options, setOptions);
                         setIsActiveButton(true);
                     }}
                 />면
@@ -29,7 +36,7 @@ function SecondStep({ options, setOptions, setIsActiveButton }) {
                     type="checkbox"
                     checked={options.mainIngredient === "고기/해물"}
                     onChange={() => {
-                        setOptions({ ...options, mainIngredient: "고기/해물" });
+                        NameOfMainIngredient("고기/해물", options, setOptions);
                         setIsActiveButton(true);
                     }}
                 />고기/해물

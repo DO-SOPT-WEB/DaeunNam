@@ -2,6 +2,13 @@ import React from "react";
 import {
 } from '../../style';
 
+function NameOfCuisine(selectedOption, options, setOptions) {
+    setOptions((prevOptions) => ({
+        ...prevOptions,
+        cuisine: selectedOption,
+    }));
+}
+
 function FirstStep({ options, setOptions, setIsActiveButton }) {
     return (
         <>
@@ -11,7 +18,7 @@ function FirstStep({ options, setOptions, setIsActiveButton }) {
                     type="checkbox"
                     checked={options.cuisine === "일식"}
                     onChange={() => {
-                        setOptions({ ...options, cuisine: "일식" });
+                        NameOfCuisine("일식", options, setOptions);
                         setIsActiveButton(true);
                     }}
                 />일식
@@ -21,7 +28,7 @@ function FirstStep({ options, setOptions, setIsActiveButton }) {
                     type="checkbox"
                     checked={options.cuisine === "중식"}
                     onChange={() => {
-                        setOptions({ ...options, cuisine: "중식" });
+                        NameOfCuisine("중식", options, setOptions);
                         setIsActiveButton(true);
                     }}
                 />중식
@@ -31,7 +38,7 @@ function FirstStep({ options, setOptions, setIsActiveButton }) {
                     type="checkbox"
                     checked={options.cuisine === "한식"}
                     onChange={() => {
-                        setOptions({ ...options, cuisine: "한식" });
+                        NameOfCuisine("한식", options, setOptions);
                         setIsActiveButton(true);
                     }}
                 />한식
