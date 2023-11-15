@@ -21,26 +21,23 @@ function SelectRecommendType({ recommendationStart, setRecommendationStart, sele
     return (
         <>
             <S.SelectOptionText>원하는 추천 방식을 골라줘!</S.SelectOptionText>
-            {!recommendationStart && (selectedOption != "") ? (
+            {!recommendationStart && selectedOption !== "" ? (
                 <>
-                    {selectedOption === 'customize' ?
-                        <S.SelectedOption>골라 먹을래</S.SelectedOption>
-                        :
-                        (selectedOption === 'random') ?
-                            <S.SelectedOption>아무거나 먹을래</S.SelectedOption>
-                            : ""
-                    }
+                    <S.SelectedOption>
+                        {selectedOption === 'customize' ? '골라 먹을래' : '아무거나 먹을래'}
+                    </S.SelectedOption>
                     <S.Start>
-                        <button onClick={() => handleStart()} type='button'>Start!</button>
+                        <button onClick={handleStart} type='button'>Start!</button>
                     </S.Start>
                 </>
-            ) :
+            ) : !recommendationStart && selectedOption === "" && (
                 <RecommendTypeButton
                     setSelectedOption={setSelectedOption}
                     handleCustomize={handleCustomize}
                     handleRandom={handleRandom}
-                    setRecommendationStart={setRecommendationStart} />
-            }
+                    setRecommendationStart={setRecommendationStart}
+                />
+            )}
         </>
     );
 }

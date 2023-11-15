@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SecondStep({ options, setOptions, setNextButtonEnabled }) {
+function SecondStep({ options, setOptions, setIsActiveButton }) {
     return (
         <>
             <h2>Step 2: 주재료는?</h2>
@@ -10,7 +10,7 @@ function SecondStep({ options, setOptions, setNextButtonEnabled }) {
                     checked={options.mainIngredient === "밥"}
                     onChange={() => {
                         setOptions({ ...options, mainIngredient: "밥" });
-                        setNextButtonEnabled(true);
+                        setIsActiveButton(true);
                     }}
                 />밥
             </label>
@@ -20,7 +20,7 @@ function SecondStep({ options, setOptions, setNextButtonEnabled }) {
                     checked={options.mainIngredient === "면"}
                     onChange={() => {
                         setOptions({ ...options, mainIngredient: "면" });
-                        setNextButtonEnabled(true);
+                        setIsActiveButton(true);
                     }}
                 />면
             </label>
@@ -30,7 +30,7 @@ function SecondStep({ options, setOptions, setNextButtonEnabled }) {
                     checked={options.mainIngredient === "고기/해물"}
                     onChange={() => {
                         setOptions({ ...options, mainIngredient: "고기/해물" });
-                        setNextButtonEnabled(true);
+                        setIsActiveButton(true);
                     }}
                 />고기/해물
             </label>

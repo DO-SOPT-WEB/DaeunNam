@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ThirdStep({ options, setOptions, setRecommendedMenu }) {
+function ThirdStep({ options, setOptions, setIsActiveButton }) {
     return (
         <>
             <h2>Step 3: 국물은?</h2>
@@ -10,7 +10,7 @@ function ThirdStep({ options, setOptions, setRecommendedMenu }) {
                     checked={options.soup === "국물"}
                     onChange={() => {
                         setOptions({ ...options, soup: "국물" });
-                        setRecommendedMenu(true);
+                        setIsActiveButton(true);
                     }}
                 />국물 좋아
             </label>
@@ -20,7 +20,7 @@ function ThirdStep({ options, setOptions, setRecommendedMenu }) {
                     checked={options.soup === "국물 없음"}
                     onChange={() => {
                         setOptions({ ...options, soup: "국물 없음" });
-                        setRecommendedMenu(true);
+                        setIsActiveButton(true);
                     }}
                 />없어도 돼
             </label>

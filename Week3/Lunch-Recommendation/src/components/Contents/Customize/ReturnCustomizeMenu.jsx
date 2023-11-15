@@ -1,7 +1,7 @@
 import React from 'react';
 import MENU_LIST from '../../../constants/MenuData';
 
-function ReturnCustomizeMenu({ options, setStep, step, setRecommendedMenu, recommendedMenu }) {
+function ReturnCustomizeMenu({ options, setStep, step, setRecommendedMenu, isActiveButton }) {
     const handleRecommendMenu = () => {
         setStep(step + 1);
         const filteredMenus = MENU_LIST.filter((menu) => {
@@ -22,7 +22,7 @@ function ReturnCustomizeMenu({ options, setStep, step, setRecommendedMenu, recom
     };
 
     return (
-        <button type="button" onClick={handleRecommendMenu} disabled={!recommendedMenu}>
+        <button type="button" onClick={handleRecommendMenu} disabled={!isActiveButton}>
             메뉴 추천
         </button>
     );
