@@ -8,7 +8,7 @@ const InitialPage = () => {
   const [selectedOption, setSelectedOption] = useState("");
   const handleReset = () => {
     setRecommendationStart(false);
-    setSelectedOption(null);
+    setSelectedOption("");
   }
 
   return (
@@ -17,7 +17,7 @@ const InitialPage = () => {
         <S.Title>😋🍛 점메추 🍛😋</S.Title>
         {selectedOption ? (
           <S.ResetButton onClick={() => handleReset()} type='button'>처음으로</S.ResetButton>
-        ) : null}
+        ) : ""}
       </S.Header>
       <S.Contents>
         {recommendationStart ? (
