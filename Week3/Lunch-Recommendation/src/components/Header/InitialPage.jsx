@@ -5,7 +5,7 @@ import * as S from './style';
 
 const InitialPage = () => {
   const [recommendationStart, setRecommendationStart] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState("");
   const handleReset = () => {
     setRecommendationStart(false);
     setSelectedOption(null);

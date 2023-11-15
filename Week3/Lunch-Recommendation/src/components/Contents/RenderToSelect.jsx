@@ -6,13 +6,9 @@ function RenderToSelect({ selectedOption, setRecommendationStart }) {
     return (
         <>
             {selectedOption === 'customize' ? (
-                <>
-                    <CustomizeMenu setRecommendationStart={setRecommendationStart} />
-                </>
+                <CustomizeMenu setRecommendationStart={setRecommendationStart} />
             ) : selectedOption === 'random' ? (
-                <>
-                    <RandomMenu setRecommendationStart={setRecommendationStart} />
-                </>
+                <RandomMenu setRecommendationStart={setRecommendationStart} />
             ) : null}
         </>
     );
