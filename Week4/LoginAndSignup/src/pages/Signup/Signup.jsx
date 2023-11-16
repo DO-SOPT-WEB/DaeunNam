@@ -8,6 +8,8 @@ const SignUp = () => {
     const [username, setUsername] = useState('');
     const [nickname, setNickname] = useState('');
     const [password, setPassword] = useState('');
+    // const [isEmpty, setIsEmpty] = useState(true);
+    const [isExist, setIsExist] = useState(false);
     const [isPasswordConfirm, setIsPasswordConfirm] = useState(false);
     const [signupButton, setSignupButton] = useState(false);
 
@@ -43,6 +45,31 @@ const SignUp = () => {
         }
     };
 
+    const duplicationCheck = (e) => {
+        e.preventDefault();
+        let inputID = document.querySelector(".id-input").value;
+        axios.get(`${import.meta.env.VITE_BASE_URL}/api/v1/members/check`, {
+            params: {
+                "username": `${inputID}`,
+            },
+        })
+            .then((res) => {
+                const isDuplicate = res.data.isDuplicate;
+                console.log(isDuplicate);
+                if (isDuplicate) {
+                    setIsExist(true);
+                    console.log("중복되는 아이디 입니다.");
+                } else {
+                    setUsername(inputID);
+                    setIsExist(false);
+                    console.log("🔥사용 가능한 아이디입니다.🔥");
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
+
     const onChangePasswordConfirm = useCallback(
         (e) => {
             e.preventDefault();
@@ -59,12 +86,12 @@ const SignUp = () => {
     )
 
     useEffect(() => {
-        isPasswordConfirm && nickname ? (
+        isExist && isPasswordConfirm && nickname ? (
             setSignupButton(true)
         ) : (
             setSignupButton(false)
         )
-    }, [isPasswordConfirm, nickname]);
+    }, [isExist, isPasswordConfirm, nickname]);
 
     return (
         <>
@@ -80,7 +107,8 @@ const SignUp = () => {
                     value={username}
                     onChange={saveUsername} />
                 <S.CheckButton
-                    type="button">중복체크
+                    type="button"
+                    onClick={duplicationCheck}>중복체크
                 </S.CheckButton>
                 <S.Field className='pwd-field'>비밀번호</S.Field>
                 <input type="text"
