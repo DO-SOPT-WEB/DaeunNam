@@ -86,7 +86,7 @@ const SignUp = () => {
     )
 
     useEffect(() => {
-        isExist && isPasswordConfirm && nickname ? (
+        !isExist && isPasswordConfirm && nickname ? (
             setSignupButton(true)
         ) : (
             setSignupButton(false)
@@ -108,6 +108,7 @@ const SignUp = () => {
                     onChange={saveUsername} />
                 <S.CheckButton
                     type="button"
+                    className={!isExist ? 'id-notExist' : 'id-exist'}
                     onClick={duplicationCheck}>중복체크
                 </S.CheckButton>
                 <S.Field className='pwd-field'>비밀번호</S.Field>
