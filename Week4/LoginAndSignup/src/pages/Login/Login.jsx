@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as S from './style';
+import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -16,6 +17,23 @@ const Login = () => {
 
     const moveSignupPage = () => {
         navigate(`/signup`);
+    };
+
+    const getData = async () => {
+        try {
+            axios.post(`${import.meta.env.VITE_BASE_URL}/api/v1/members/sign-in`, {
+                username: username,
+                password: password,
+            }).then((res) => {
+                console.log("✨성공🤩✨");
+                console.log(`아이디 : ${res.data.username}`);
+                console.log(`비번 : ${res.data.password}`);
+                console.log(res);
+                navigate(`/mypage/${res.data.id}`);
+            })
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     return (
@@ -38,7 +56,7 @@ const Login = () => {
                     onChange={savePassword} />
             </S.InputContainer>
             <S.ButtonContainer>
-                <S.Button type="button">로그인</S.Button>
+                <S.Button type="button" onClick={getData}>로그인</S.Button>
                 <S.SignUpBtn type="button" onClick={moveSignupPage}>회원가입</S.SignUpBtn>
             </S.ButtonContainer>
         </S.Container>
