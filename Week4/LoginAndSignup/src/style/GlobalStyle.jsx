@@ -4,12 +4,11 @@ import reset from "styled-reset";
 export const GlobalStyle = createGlobalStyle`
 ${reset}
 
-:root { /* css변수 기능을 이용*/
-  --color-bg-dark: #f5f5f5;
-  --color-bg: #fdfffd;
-  --color-grey: #d1d1d1;
-  --color-text: #22243b;
-  --color-accent: #f16e03;
+:root {
+  --color-bg: #f5f5f5;
+  --color-button-bg: #000000;
+  --color-light-pink: #FFD2D7;
+  --color-accent: #FF1493;
 }
 
 body {
@@ -32,6 +31,14 @@ button {
 
 * {
     box-sizing: border-box;
-}`;
+}
+
+input {
+    padding: 0.28rem;
+    border-radius: 0.5rem;
+    border: solid;
+}
+
+`;
 
 
