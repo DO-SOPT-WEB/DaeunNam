@@ -27,11 +27,10 @@ const SignUp = () => {
 
     const navigate = useNavigate();
     const moveLoginPage = () => {
-        navigate(`/post/${username}`);
+        navigate(`/login`);
     };
 
-    const postData = async (e) => {
-        e.preventDefault();
+    const postData = async () => {
         try {
             axios.post(`${import.meta.env.VITE_BASE_URL}/api/v1/members`, {
                 "username": username,
@@ -45,9 +44,9 @@ const SignUp = () => {
         }
     };
 
-    const duplicationCheck = (e) => {
-        e.preventDefault();
+    const duplicationCheck = () => {
         let inputID = document.querySelector(".id-input").value;
+
         axios.get(`${import.meta.env.VITE_BASE_URL}/api/v1/members/check`, {
             params: {
                 "username": `${inputID}`,
@@ -72,7 +71,6 @@ const SignUp = () => {
 
     const onChangePasswordConfirm = useCallback(
         (e) => {
-            e.preventDefault();
             const passwordConfirmCurrent = e.target.value
             if (password === passwordConfirmCurrent) {
                 console.log('✅비밀번호 일치✅');
