@@ -1,15 +1,24 @@
+import { useNavigate } from 'react-router-dom';
+import * as S from './style';
+
 const MyPage = () => {
+    const navigate = useNavigate();
+
+    const moveLoginPage = () => {
+        navigate(`/login`);
+    };
+
     return (
-        <>
-            <h3>MY PAGE</h3>
-            <div>
+        <S.Container>
+            <S.PageTitle>MY PAGE</S.PageTitle>
+            <S.TextArea>
                 ID :
-            </div>
-            <div>
+            </S.TextArea>
+            <S.TextArea>
                 닉네임 :
-            </div>
-            <button type="button">로그아웃</button>
-        </>
+            </S.TextArea>
+            <S.Button type="button" onClick={moveLoginPage}>로그아웃</S.Button>
+        </S.Container>
     );
 };
 
