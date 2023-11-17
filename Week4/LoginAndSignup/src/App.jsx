@@ -1,5 +1,5 @@
+import Router from './components/Router';
 import './App.css'
-import SignUp from './pages/SignUp/SignUp';
 import { GlobalStyle } from './style/GlobalStyle';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <SignUp />
+      <Router />
     </>
   )
 }
