@@ -24,16 +24,14 @@ const Login = () => {
 
     const getData = async () => {
         try {
-            axios.post(`${import.meta.env.VITE_BASE_URL}/api/v1/members/sign-in`, {
+            const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/v1/members/sign-in`, {
                 username: username,
                 password: password,
-            }).then((res) => {
-                console.log("✨성공🤩✨");
-                console.log(`아이디 : ${res.data.username}`);
-                console.log(`비번 : ${res.data.password}`);
-                console.log(res);
-                navigate(`/mypage/${res.data.id}`);
             })
+            console.log("✨성공🤩✨");
+            console.log(`아이디 : ${res.data.username}`);
+            console.log(`비번 : ${res.data.password}`);
+            navigate(`/mypage/${res.data.id}`);
         } catch (err) {
             setError(true);
             setErrMessage(err.response.data.message);
@@ -65,12 +63,12 @@ const Login = () => {
                     <S.SignUpBtn type="button" onClick={moveSignupPage}>회원가입</S.SignUpBtn>
                 </S.ButtonContainer>
             </S.Container>
-            {error ? (
+            {error ?
                 <Toast
                     error={error}
                     setError={setError}
                     errMessage={errMessage}
-                ></Toast>, document.getElementById("toast"))
+                ></Toast>
                 : null
             }
         </>
