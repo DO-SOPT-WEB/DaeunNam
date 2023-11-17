@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 23rem;
-    height: 18rem;
+    height: 20rem;
     line-height: 40px;
     background-color: var(--color-bg);
     border-radius: 1rem;
@@ -17,6 +17,7 @@ export const PageTitle = styled.h3`
     font-size: 1.5rem;
     padding: 2rem;
     font-weight: bold;
+    padding-bottom: 0;
 `;
 
 export const TextArea = styled.div`
@@ -25,6 +26,12 @@ export const TextArea = styled.div`
     font-size: 1rem;
     font-weight: bold;
     padding: 0.2rem;
+`;
+
+export const Profile = styled.img`
+    width: 4rem;
+    height: auto;
+    margin-left: 9.5rem;
 `;
 
 export const Button = styled.button`

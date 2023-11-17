@@ -2,6 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from "axios";
 import * as S from './style';
 import { useState } from 'react';
+import profileImg from "../../assets/profile/profile.png";
 
 const MyPage = () => {
     const { userId } = useParams();
@@ -32,6 +33,7 @@ const MyPage = () => {
     return (
         <S.Container>
             <S.PageTitle>MY PAGE</S.PageTitle>
+            <S.Profile src={profileImg} />
             <S.TextArea>
                 ID : {username}
             </S.TextArea>

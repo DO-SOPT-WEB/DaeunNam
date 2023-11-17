@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 
 const Toast = ({ error, setError, errMessage }) => {
-    console.log("아무거");
     useEffect(() => {
         setTimeout(() => {
             setError(false);
@@ -20,14 +19,14 @@ const Toast = ({ error, setError, errMessage }) => {
 export default Toast;
 
 const ToastWrapper = styled.div`
-    background-color: var(--color-light-pink);
+    background-color: var(--color-bg);
     position: fixed;
     bottom: 11rem;
-    right: 26rem;
-    padding: 0.5rem;
+    right: 25rem;
+    padding: 0.6rem;
     border-radius: 1rem;
 `;
 
 const ToastMessage = styled.div`
-    color: var(--color-button-bg);
+    color: black;
 `;
