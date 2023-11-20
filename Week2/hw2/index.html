@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>당니의 가계부</title>
+</head>
+<body>
+    <h1 class="title">당니의 가계부</h1>
+    <section class="myStatus">
+        <p class="total_txt">나의 자산</p>
+        <p class="total">341200</p>
+        <div class="totalIncomeSpending">
+            <img src="./images/plus.png" class="plus" />
+            <p class="income">341200</p>
+            <img src="./images/minus.png" class="minus"/>
+            <p class="spending">50300</p>
+        </div>
+    </section>
+    <br>
+    <section>
+        <article class="dateArea">
+            <div class="selectDate">
+                <input type="button" class="left_btn">
+                <p class="date">10월 1일</p>
+                <input type="button" class="right_btn">
+            </div>
+            <p class="listText">내역 리스트</p>
+            <input type="checkbox" id="income" checked>
+            <label for="income" class="checkbox-label">수입</label>
+            <input type="checkbox" id="spending" checked>
+            <label for="spending" class="checkbox-label">지출</label>
+        </article>
+    </section>
+    <hr>
+    <section class="scrollArea">
+        <div id="incomeList"></div>
+        <div id="spendingList"></div>
+    </section>
+    <div class="modal hidden">
+        <div class="modal_content">
+            <p class="modal-title">내역 추가</p>
+            <div class="radioButtons">
+                <input type="radio" id="radio-income" name="finance" checked/>
+                <label for="radio-income" class="radio-label">수입</label>
+                <input type="radio" id="radio-spending" name="finance"/>
+                <label for="radio-spending" class="radio-label">지출</label>
+            </div>
+            
+            <div class="type-of-finance">종류</div>
+            <select class="category-list">
+            </select>
+
+            <div class="amount-of-finance">금액</div>
+            <input type="text" class="textbox" name="amount"/><br>
+
+            <div class="content-of-finance">내용</div>
+            <input type="text" class="textbox" name="content"/><br>
+
+            <button type="button" class="save_btn">저장하기</button>
+            <button type="button" class="cancel_btn">닫기</button>
+        </div>
+    </div>
+    <script src="index.js" defer></script>
+</body>
+<footer>
+    <button type="button" class="add_btn"></button>
+</footer>
+</html>

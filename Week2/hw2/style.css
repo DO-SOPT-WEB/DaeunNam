@@ -1,0 +1,303 @@
+body {
+    margin: 0rem;
+    height: 375px;
+}
+
+.title {
+    margin-top: 0rem;
+    border-bottom: 0.2rem solid gray;
+    background-color: lavender;
+    padding: 0.5rem 0.5rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.myStatus {
+    display: block;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    border: 0.3rem solid black;
+    border-radius: 0.7rem;
+    background-color: lavender;
+    overflow: hidden;
+    text-align: center;
+}
+
+.dateArea {
+    overflow: hidden;
+}
+
+.total_txt {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.total {
+    margin-top: 0rem;
+    margin-bottom: 0.1rem;
+    padding-top: 0rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.totalIncomeSpending {
+    padding-bottom: 1rem;
+}
+
+.plus, .minus {
+    position: relative;
+    bottom: -0.2rem;
+    margin-right: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.income {
+    display: inline;
+    padding-right: 1rem;
+    color: blue;
+}
+
+.spending {
+    display: inline;
+    color: red;
+}
+
+.selectDate {
+    border-top: 0.2rem solid gray;
+    padding-top: 0.5rem;
+    text-align: center;
+}
+
+input.left_btn {
+    margin-right: 0.1rem;
+    background: url("images/toLeft.png") no-repeat;
+    text-align: center;
+}
+
+input.right_btn {
+    margin-right: 0.1rem;
+    background: url("images/toRight.png") no-repeat;
+}
+
+
+input.left_btn, input.right_btn, .date {
+    margin-top: 0.6rem;
+    border: none;
+    background-size: cover;
+    padding: 0.3rem 0.6rem 0rem 0.6rem;
+    width: 1rem;
+    height: 1.5rem;
+}
+
+.date {
+    display: inline;
+    font-size: 1.2rem;
+}
+
+.listText {
+    display: inline;
+    float: left;
+    margin-left: 0.2rem;
+    font-weight: bold;
+}
+
+#income, #spending, .checkbox-label {
+    float: right;
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    padding: 0.3rem 1.5rem;
+}
+
+#income, #spending {
+    display: none;
+}
+
+input[id="income"]:checked + .checkbox-label {
+    border: 1px solid transparent;
+    background-color: rgb(205, 207, 255);
+}
+
+input[id="spending"]:checked + .checkbox-label {
+    border: none;
+    border: 1px solid transparent;
+    background-color: rgb(205, 207, 255);
+}
+
+.line {
+    border-bottom: 1px solid rgba(153, 153, 153, 0.721);
+}
+
+.scrollArea {
+    height: calc(100vh - 390px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.listView {
+    display: block;
+    margin: 0rem 1rem 1rem 1rem;
+    border-radius: 0.5rem;
+    background-color: lavender;
+    height: 3.3rem;
+}
+
+ul, li {
+    display: flex;
+    list-style-type: none;
+}
+
+.category, .content, .spending_price, .income_price, input.delete_btn {
+    display: inline-block;
+    position: relative;
+}
+
+.category  {
+    right: 1rem;
+    bottom: -1.2rem;
+}
+
+.content {
+    top: 1.2rem;
+    left: 1rem;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.spending_price, .income_price {    
+    right: 0.1rem;
+    bottom: -1.3rem;
+    margin-left: auto;
+}
+
+.spending_price {
+    color: red;
+}
+
+.income_price {
+    color: blue;
+}
+
+input.delete_btn {
+    right: 0.3rem;
+    bottom: -0.3rem;
+    border: none;
+    background: url("images/delete.png") no-repeat;
+    background-size: cover;
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0rem;
+    left: 0rem;
+    margin: 0rem;
+    background-color: lightgrey;
+    width: 100%;
+    height: 3rem;
+}
+
+.add_btn {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background: url("images/add.png") no-repeat;
+    background-size: cover;
+    width: 3.3rem;
+    height: 3rem;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 15rem;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+}
+
+.modal_content {
+    display: block;
+    position: relative;
+    bottom: -3rem;
+    border: 2px solid gray;
+    border-radius: 50px;
+    background-color: ghostwhite;
+    padding: 1rem 2rem;
+    width: 100%;
+    height: 50%;
+    min-height: 50rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.modal_content > .modal-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal_content > select, button, .textbox {
+    width: 100%;
+    height: 2rem;
+}
+
+.modal_content > div, button {
+    margin-top: 1rem;
+}
+
+.modal_content > input.textbox {
+    width: 98.5%;
+}
+
+.radioButtons {
+    text-align: center;
+}
+
+#radio-income, #radio-spending, .radio-label {
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+}
+
+#radio-income, #radio-spending {
+    display: none;
+}
+
+input[id="radio-income"]:checked + .radio-label {
+    border: 1px solid transparent;
+    background-color: rgb(155, 158, 248);
+}
+
+input[id="radio-spending"]:checked + .radio-label {
+    border: none;
+    border: 1px solid transparent;
+    background-color: rgb(155, 158, 248);
+}
+
+.save_btn, .cancel_btn {
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.save_btn {
+    background-color: lavender;
+}
+
+.hidden {
+    display: none;
+}
