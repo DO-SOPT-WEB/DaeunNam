@@ -1,0 +1,30 @@
+import React from 'react';
+import MENU_LIST from '../../../constants/MenuData';
+
+function ReturnCustomizeMenu({ options, setStep, step, setRecommendedMenu, isActiveButton }) {
+    const handleRecommendMenu = () => {
+        setStep(step + 1);
+        const filteredMenus = MENU_LIST.filter((menu) => {
+            return (
+                (options.cuisine === '' || menu.cuisine === options.cuisine) &&
+                (options.mainIngredient === '' || menu.mainIngredient === options.mainIngredient) &&
+                (options.soup === '' || menu.soup === options.soup)
+            );
+        });
+
+        if (filteredMenus.length > 0) {
+            const randomIndex = Math.floor(Math.random() * filteredMenus.length);
+            setRecommendedMenu(filteredMenus[randomIndex].name);
+        } else {
+            setRecommendedMenu('텅 😅');
+        }
+    };
+
+    return (
+        <button type="button" onClick={handleRecommendMenu} disabled={!isActiveButton}>
+            메뉴 추천
+        </button>
+    );
+}
+
+export default ReturnCustomizeMenu;
